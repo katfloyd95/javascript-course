@@ -73,22 +73,58 @@
 
 // 5.4 Nunmbers and Booleans Practice
 
-const myMoney = 300;
+// const myMoney = 300;
 
 // print even if my money is even
 // print odd if my money is odd
 
 // a TRICK for outputing whether a number is even or odd
-const isEven = (myMoney % 2) === 0; // if the number is even, the modulo will equal 0, if odd the modulo will equal 1
-console.log(isEven);
+// const isEven = (myMoney % 2) === 0; // if the number is even, the modulo will equal 0, if odd the modulo will equal 1
+// console.log(isEven);
 
 
 
-if (isEven) { // even
-  console.log("Is even");
-} else { // odd
-  console.log("Is odd");
+// if (isEven) { // even
+//   console.log("Is even");
+// } else { // odd
+//   console.log("Is odd");
+// }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.5 Strings
+
+// strings are a primitive data type
+         //   012
+let myName = "Kat";
+let myMiddleName = 'Hendserson\'s Computer'; // the backslash is indicating that ths following symbol should be ignored for closing the string
+
+let myFriendsName = `Ellen`; // string interpolation
+let myFriendsFullName = `${myFriendsName} Heile`;
+console.log(myFriendsFullName);
+
+// Indexing
+
+console.log(myName[0]); // why is it 'K'? This is because each letter has it's own index 012345... 
+
+// Concatenation
+
+console.log(myName + ' ' + myMiddleName);
+
+// 1st String Method
+
+// calculate the length of a string:
+console.log(myName.length);
+
+if (myName === 'Kat') {
+  console.log("I'm Kat");
 }
+
+
+
+
+
+
 
 
 
