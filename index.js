@@ -69,6 +69,26 @@
 //   console.log("I'm poor")
 // }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.4 Nunmbers and Booleans Practice
+
+const myMoney = 300;
+
+// print even if my money is even
+// print odd if my money is odd
+
+// a TRICK for outputing whether a number is even or odd
+const isEven = (myMoney % 2) === 0; // if the number is even, the modulo will equal 0, if odd the modulo will equal 1
+console.log(isEven);
+
+
+
+if (isEven) { // even
+  console.log("Is even");
+} else { // odd
+  console.log("Is odd");
+}
 
 
 
