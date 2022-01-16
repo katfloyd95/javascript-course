@@ -96,30 +96,59 @@
 
 // strings are a primitive data type
          //   012
-let myName = "Kat";
-let myMiddleName = 'Hendserson\'s Computer'; // the backslash is indicating that ths following symbol should be ignored for closing the string
+// let myName = "Kat";
+// let myMiddleName = 'Hendserson\'s Computer'; // the backslash is indicating that ths following symbol should be ignored for closing the string
 
-let myFriendsName = `Ellen`; // string interpolation
-let myFriendsFullName = `${myFriendsName} Heile`;
-console.log(myFriendsFullName);
+// let myFriendsName = `Ellen`; // string interpolation
+// let myFriendsFullName = `${myFriendsName} Heile`;
+// console.log(myFriendsFullName);
 
-// Indexing
+// // Indexing
 
-console.log(myName[0]); // why is it 'K'? This is because each letter has it's own index 012345... 
+// console.log(myName[0]); // why is it 'K'? This is because each letter has it's own index 012345... 
 
-// Concatenation
+// // Concatenation
 
-console.log(myName + ' ' + myMiddleName);
+// console.log(myName + ' ' + myMiddleName);
 
-// 1st String Method
+// // 1st String Method
 
-// calculate the length of a string:
-console.log(myName.length);
+// // calculate the length of a string:
+// console.log(myName.length);
 
-if (myName === 'Kat') {
-  console.log("I'm Kat");
-}
+// if (myName === 'Kat') {
+//   console.log("I'm Kat");
+// }
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.6 Template Strings and Escaped Characters
+
+// "Template Strings"
+
+var firstName = "Kat";
+var helloString = `<h1> Hello ${firstName} </h1>`; // you can attach this html element to our page with JS
+console.log(helloString);
+
+// a string usually has to be written all in the same line with single quotes, but you can add new lines by using the special escape new line character \n
+
+var paragraphs = 'first paragraph \n second paragraph \n third paragraph';
+
+// you can also create a tab using escape character \t
+
+var paragraphs = 'first paragraph \t second paragraph \t third paragraph';
+
+// if you use backtick, you can organize this better since you can use multiple lines per string
+// the formatting done here is also preserved the way it is typed in the code
+
+var paragraphs = `
+  <div>
+    <h1>${firstName}</h1>
+    <p>Paragraph 1</p>
+  </div>
+`;
+
+// being able to write multiple lines within a string is great because you can easily insert lines of code!
 
 
 
