@@ -161,16 +161,16 @@
             ☑️ Create a number variable "myAge" with your age inside
     */
 
-      const myFirstName = "Kat";
-      const myAge = 26;
+      // const myFirstName = "Kat";
+      // const myAge = 26;
 
     /*
         ☑️ Now, create a new variable called "myFullName" USING the "myFirstName" variable
         ☑️ Print a statement introducing yourself
     */
 
-      const myFullName = `${myFirstName} Floyd`;
-      console.log(`My name is ${myFullName}`);
+      // const myFullName = `${myFirstName} Floyd`;
+      // console.log(`My name is ${myFullName}`);
 
     /*
         ☑️ Let's next write an if statement that prints 
@@ -180,13 +180,13 @@
             (You Should Have an If, and Else if, and an Else below -- not just a single console.log)
     */
 
-      if (myAge > 28) {
-        console.log("Im older than Aaron");
-      } else if (myAge === 28) {
-        console.log("Im the same age as Aaron");
-      } else {
-        console.log("Im younger than Aaron");
-      }
+      // if (myAge > 28) {
+      //   console.log("Im older than Aaron");
+      // } else if (myAge === 28) {
+      //   console.log("Im the same age as Aaron");
+      // } else {
+      //   console.log("Im younger than Aaron");
+      // }
     
     /*
         ☑️ Next, calculate whether your age is even or odd, and store it in a boolean variable "isEven"
@@ -194,13 +194,13 @@
           depending which is true
     */
 
-      let isEven = (myAge % 2) === 0;
+      // let isEven = (myAge % 2) === 0;
       
-      if (isEven) {
-        console.log("My age is even");
-      } else {
-        console.log("My age is odd");
-      }
+      // if (isEven) {
+      //   console.log("My age is even");
+      // } else {
+      //   console.log("My age is odd");
+      // }
 
     /*
         YOUR CODE SHOULD NOW PRINT 3 SENTENCES TO THE CONSOLE:
@@ -224,13 +224,13 @@
             -> (note the difference)
      */
 
-        const activeUserCount = 0;
+        // const activeUserCount = 0;
 
-        if (activeUserCount === 1) {
-        console.log(`There is ${activeUserCount} active user.`);
-        } else {
-          console.log(`There are ${activeUserCount} active users.`)
-        } 
+        // if (activeUserCount === 1) {
+        // console.log(`There is ${activeUserCount} active user.`);
+        // } else {
+        //   console.log(`There are ${activeUserCount} active users.`)
+        // } 
 
       /*
         THE FINAL CHALLENGE (HARD)
@@ -241,26 +241,51 @@
         ☑️ Your code should work with any number
       */
 
-        const num = '50011';
-        console.log(num[num.length-1]);
-        console.log(num[num.length-2]);
+        // const num = '50011';
+        // console.log(num[num.length-1]);
+        // console.log(num[num.length-2]);
 
-        if (num[num.length-2] == 1) {
-          console.log(`${num}th`);
-        }
-        else if (num[num.length-1] == 1) {
-          console.log(`${num}st`);
-        } else if (num[num.length-1] == 2) {
-          console.log(`${num}nd`);
-        } else if (num[num.length-1] == 3) {
-          console.log(`${num}rd`);
-        } else {
-          console.log(`${num}th`);
-        }
-
-
+        // if (num[num.length-2] == 1) {
+        //   console.log(`${num}th`);
+        // }
+        // else if (num[num.length-1] == 1) {
+        //   console.log(`${num}st`);
+        // } else if (num[num.length-1] == 2) {
+        //   console.log(`${num}nd`);
+        // } else if (num[num.length-1] == 3) {
+        //   console.log(`${num}rd`);
+        // } else {
+        //   console.log(`${num}th`);
+        // }
 
 
+////////////////////////////////////////////////////////////////////
+
+// 5.7 Arrays
+
+// arrays are a compound data type: usually store things in compound data types
+
+const nums = [1, 2, 3];
+const strings = [true, 'hi', 'how are you', false]; // you can also use booleans and strings in arrays
+
+console.log(nums.length);
+console.log(nums[0]);
+
+// Array Method #1 - Add an element
+
+nums.push(4); // adds an item to the end of the array
+
+// Array Method #2 - Remove an element
+
+nums.pop(); // removes last element of the array
+
+const last = nums.pop(); // this is removing the last element of an array, and storing that removed element into a variable name
+
+// Array Method #3 - assign an index in an array a certain element
+
+nums[0] = 0; // this changes the 0 index position element in an array to 0
+
+console.log(nums);
 
 
 
