@@ -573,51 +573,75 @@
 
   // 5.11 Conditional Chaining
 
-  let num = 0;
-  let name = "Aaron";
+  // let num = 0;
+  // let name = "Aaron";
 
-  // if two equivalence expressions are true:
-  if (num === 0 && name === "Aaron") { // if the equivalence is true
-    console.log("This is true");
-  } else {
-    console.log("That was false");
+  // // if two equivalence expressions are true:
+  // if (num === 0 && name === "Aaron") { // if the equivalence is true
+  //   console.log("This is true");
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // // another way to do this:
+
+  // numAndName = num === 0 && name === "Aaron";
+  // console.log(numAndName);
+
+  // if (numAndName) { // if the equivalence is true
+  //   console.log("This is true");
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // // Conditional || (OR) Operator
+
+  // numOrName = num === 1 || name === "Aaron";
+  // console.log(numOrName);
+
+  // if (numOrName) { // if the equivalence is true
+  //   console.log("This is true");
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // // Chaining different conditionals
+
+  // numAndOrName = (name === "Aaron" || name === "Jan") && num === 0;
+
+  // console.log(numAndOrName);
+
+  // // truthys and falseys
+
+  // if (numOrName && name) { // if these values exist
+  //   console.log("This is true");
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  ////////////////////////////////////////////////////////////////////////////////////////////
+
+  // 5.13 Variable Scope
+
+  const firstName = "Kat";
+  const lastName = "Floyd"
+
+  if (firstName && lastName) {
+    const fullName =`${firstName} ${lastName}`;
   }
 
-  // another way to do this:
+  // console.log(fullName); // but fullName is not defined outside of the if statement, so doesn't work
 
-  numAndName = num === 0 && name === "Aaron";
-  console.log(numAndName);
+  // but if you define fullName outside of the if statement, then you can log fullName into console
+  let fullName;
 
-  if (numAndName) { // if the equivalence is true
-    console.log("This is true");
-  } else {
-    console.log("That was false");
+  if (firstName && lastName) {
+    fullName =`${firstName} ${lastName}`;
   }
 
-  // Conditional || (OR) Operator
+  console.log(fullName);
 
-  numOrName = num === 1 || name === "Aaron";
-  console.log(numOrName);
-
-  if (numOrName) { // if the equivalence is true
-    console.log("This is true");
-  } else {
-    console.log("That was false");
-  }
-
-  // Chaining different conditionals
-
-  numAndOrName = (name === "Aaron" || name === "Jan") && num === 0;
-
-  console.log(numAndOrName);
-
-  // truthys and falseys
-
-  if (numOrName && name) { // if these values exist
-    console.log("This is true");
-  } else {
-    console.log("That was false");
-  }
+// variables get passed down from the scope they are created in, but they don't get passed up from the scope they are created in
 
 
 
