@@ -487,87 +487,144 @@
 
   // conditionals - truthy, falsey, chaining, scope
 
-  const num = 5;
+  // const num = 5;
 
-  // TRUTHY
+  // // TRUTHY
 
-  if (123) {
-    console.log('That was true'); // true
+  // if (123) {
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // if ('nfdjsk') {
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // if (num) { // if num exists, it's true
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // // empty arrays and objects are truthys
+
+  // if ([]) {
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // if ({}) {
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // // FALSEY:
+
+  // // NUMBER 0 IS FALSEY
+
+  // if (0) {
+  //   console.log('That was true'); 
+  // } else {
+  //   console.log("That was false"); // false
+  // }
+
+  // if (undefined) {
+  //   console.log('That was true'); 
+  // } else {
+  //   console.log("That was false"); // false
+  // }
+
+  // if (null) {
+  //   console.log('That was true'); 
+  // } else {
+  //   console.log("That was false"); // false
+  // }
+
+  // if (NaN) {
+  //   console.log('That was true'); 
+  // } else {
+  //   console.log("That was false"); // false
+  // }
+
+  // if ("") {
+  //   console.log('That was true'); 
+  // } else {
+  //   console.log("That was false"); // false
+  // }
+
+  // if ([].length) { // equals 0
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  // if ( Object.keys({}).length ) { // equals 0
+  //   console.log('That was true'); // true
+  // } else {
+  //   console.log("That was false");
+  // }
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // 5.11 Conditional Chaining
+
+  let num = 0;
+  let name = "Aaron";
+
+  // if two equivalence expressions are true:
+  if (num === 0 && name === "Aaron") { // if the equivalence is true
+    console.log("This is true");
   } else {
     console.log("That was false");
   }
 
-  if ('nfdjsk') {
-    console.log('That was true'); // true
+  // another way to do this:
+
+  numAndName = num === 0 && name === "Aaron";
+  console.log(numAndName);
+
+  if (numAndName) { // if the equivalence is true
+    console.log("This is true");
   } else {
     console.log("That was false");
   }
 
-  if (num) { // if num exists, it's true
-    console.log('That was true'); // true
+  // Conditional || (OR) Operator
+
+  numOrName = num === 1 || name === "Aaron";
+  console.log(numOrName);
+
+  if (numOrName) { // if the equivalence is true
+    console.log("This is true");
   } else {
     console.log("That was false");
   }
 
-  // empty arrays and objects are truthys
+  // Chaining different conditionals
 
-  if ([]) {
-    console.log('That was true'); // true
+  numAndOrName = (name === "Aaron" || name === "Jan") && num === 0;
+
+  console.log(numAndOrName);
+
+  // truthys and falseys
+
+  if (numOrName && name) { // if these values exist
+    console.log("This is true");
   } else {
     console.log("That was false");
   }
 
-  if ({}) {
-    console.log('That was true'); // true
-  } else {
-    console.log("That was false");
-  }
 
-  // FALSEY:
 
-  // NUMBER 0 IS FALSEY
 
-  if (0) {
-    console.log('That was true'); 
-  } else {
-    console.log("That was false"); // false
-  }
+  
 
-  if (undefined) {
-    console.log('That was true'); 
-  } else {
-    console.log("That was false"); // false
-  }
 
-  if (null) {
-    console.log('That was true'); 
-  } else {
-    console.log("That was false"); // false
-  }
-
-  if (NaN) {
-    console.log('That was true'); 
-  } else {
-    console.log("That was false"); // false
-  }
-
-  if ("") {
-    console.log('That was true'); 
-  } else {
-    console.log("That was false"); // false
-  }
-
-  if ([].length) { // equals 0
-    console.log('That was true'); // true
-  } else {
-    console.log("That was false");
-  }
-
-  if ( Object.keys({}).length ) { // equals 0
-    console.log('That was true'); // true
-  } else {
-    console.log("That was false");
-  }
 
 
 
