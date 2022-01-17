@@ -340,10 +340,10 @@
     ☑️ And print out the entire "nums array"
 */
 
-  const nums = [1, 2, 3];
-  console.log(nums);
-  nums[0] = 4;
-  console.log(nums);
+  // const nums = [1, 2, 3];
+  // console.log(nums);
+  // nums[0] = 4;
+  // console.log(nums);
 
 /*
     ☑️ Let's add 5 and 6 to the end of the nums array (HINT: use a "method")
@@ -353,11 +353,11 @@
     ☑️ Then print "lastNum" to the console!
 */
 
-  nums.push(5,6);
-  nums[nums.length - 1] = 10;
-  console.log(nums);
-  const lastNum = nums.pop();
-  console.log(lastNum);
+  // nums.push(5,6);
+  // nums[nums.length - 1] = 10;
+  // console.log(nums);
+  // const lastNum = nums.pop();
+  // console.log(lastNum);
   
 
 /*
@@ -376,19 +376,75 @@
     ☑️ Print out the entire object and make sure everything looks correct
 */
 
-  const product = {
-    name: "shiny shoes",
-    brand: "gucci",
-    price: 100,
-    color: "black",
-    soldOut: false,
-  }
+  // const product = {
+  //   name: "shiny shoes",
+  //   brand: "gucci",
+  //   price: 100,
+  //   color: "black",
+  //   soldOut: false,
+  // }
 
-  console.log(product.name, product.brand, product.price);
-  product.sale = true;
-  product.tags = ["men", "luxury"];
-  product.soldOut = true;
-  console.log(product);
+  // console.log(product.name, product.brand, product.price);
+  // product.sale = true;
+  // product.tags = ["men", "luxury"];
+  // product.soldOut = true;
+  // console.log(product);
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // 5.9 Value vs. Reference
+
+  // combining different data types
+
+  // an array of a list of different users
+
+  const users = [
+    {
+      name: "Aaron",
+      age: 27,
+      tags: ['new-user', 'javascript']
+    },
+    {
+      name: "Phillip",
+      age: 30,
+      tags: ['javascript']
+    },
+    {
+      name: "Jan",
+      age: 25,
+      tags: []
+    } 
+  ];
+
+  // by value assignment (all primitive data types):
+  const age = 28;
+  let age2 = age; // this is copying the previous line and creating a new variable with the same value (age)
+
+  age2 = 27; // since age2 is a copy of age, the reassignment of age2 does not affect the value of age
+
+  console.log(age, age2);
+
+  // by reference assignment (all compound data types):
+  const names = ['Aaron'];
+  let names2 = names; 
+
+  names2.push('Jan'); // when you do this, 'Jan' is pushed to the names AND names2 arrays
+  // this is because under the hood, names and names2 are the same array
+
+  console.log(names, names2); // outputs: ['Aaron', 'Jan ] ['Aaron', 'Jan ]
+  
+  const user = {name: "Aaron"};
+  let name2 = user;
+  let name3 = name2;
+  let name4 = name3;
+
+  user.name= "Jan";
+
+  console.log(name3, name4); // outputs {name: "Jan"} {name: "Jan"}
+
+  
+
+
 
 
 
