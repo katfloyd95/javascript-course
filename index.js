@@ -649,69 +649,132 @@
 
 // detecting and converting different JS types
 
-let myNum = 123;
-myNum = '123'; // there is no way to know from the frontend whether 123 is a number or string
+// let myNum = 123;
+// myNum = '123'; // there is no way to know from the frontend whether 123 is a number or string
 
-if (typeof myNum === 'number') {
-  console.log("its a number");
-} else if (typeof myNum === "string") {
-  console.log("its a string");
+// if (typeof myNum === 'number') {
+//   console.log("its a number");
+// } else if (typeof myNum === "string") {
+//   console.log("its a string");
+// };
+
+// // typeof is the only function that works with a space, no need for function()
+
+// const myArr = [1,2,3];
+
+// // console.log(typeof myArr); // says that it's an object, because typeof doesn't detect arrays
+
+// // special function that you have to use detect arrays:
+// if (Array.isArray(myArr)) {
+//   console.log('its an array');
+// }
+
+// // detecting NaN:
+// console.log(typeof NaN); // typeof detects NaN as a number, which is incorrect
+// console.log(isNaN(NaN)); // this is how you properly detect an NaN
+
+// // CHANGING THE TYPE:
+
+// // if my number is actually not a number (e.g. a string), how to convert to number in if-statement:
+// myNum = 123;
+
+// if (typeof myNum !== 'number') {
+//   // myNum = Number(myNum); // converts string number to real number
+//   myNum = +myNum; // second way to convert string number to real number
+// }
+
+// console.log(typeof myNum);
+
+// // if your string is not actually a number, you will get a weird NaN output
+
+// // if a number, but want to convert number to string:
+// if (typeof myNum !== 'string') {
+//   // myNum = String(123);
+//   myNum = myNum.toString(); // convert to string
+
+// }
+
+// console.log(typeof myNum)
+
+// // BOOLEAN type conversion
+
+// myNum = 123;
+
+// if (typeof myNum !== 'string') {
+//   myNum = Boolean(myNum);
+// }
+
+// console.log(typeof myNum, myNum); // type is boolean, and myNum value is true
+
+// // truthy and falsey values apply here
+
+// // exceptions to typeof are Arrays and NaN
+// console.log(Array.isArray([]), isNaN(NaN));
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+ JS Practice 3
+ Again you'll want to open the console to test your results
+*/
+
+/*
+    ☑️ create an empty "Array Literal" and save it in the variable "days"
+    ☑️ write an "if" statement to test if the array has any items (HINT: truthy / falsy)
+    ☑️ inside the "if" block, print out the first item from the array
+    ☑️ inside the "else" block, push a string "Mon" into the array
+*/
+
+const days = [];
+
+if (days.length) {
+  console.log("There are items in here");
+  console.log(days[0]);
+} else {
+  console.log("There are no items in here");
+  days.push("Mon");
 };
 
-// typeof is the only function that works with a space, no need for function()
+console.log(days);
 
-const myArr = [1,2,3];
 
-// console.log(typeof myArr); // says that it's an object, because typeof doesn't detect arrays
+/*
+    ☑️ create an "Array Literal" and save it in the variable "months" and add the values "Jan" and "Feb"
+    ☑️ write an "if" statement to test if the array has any items AND the first month starts with "J" 
+    ☑️ inside the "if" block, print out the first item from the array
+    ☑️ inside the "else" block, push a string "Jan" into the array.
+    ☑️ outside the "if else" blocks, print out the "type of" the "months" variable (HINT: arrays have a special type function)
+*/
 
-// special function that you have to use detect arrays:
-if (Array.isArray(myArr)) {
-  console.log('its an array');
-}
+const months = ["Jan", "Feb"];
 
-// detecting NaN:
-console.log(typeof NaN); // typeof detects NaN as a number, which is incorrect
-console.log(isNaN(NaN)); // this is how you properly detect an NaN
+if (months && months[0][0]) {
+  console.log("There are items in here");
+  console.log(months[0]);
+} else {
+  months.push("Jan");
+};
 
-// CHANGING THE TYPE:
+console.log(Array.isArray(months));
 
-// if my number is actually not a number (e.g. a string), how to convert to number in if-statement:
-myNum = 123;
-
-if (typeof myNum !== 'number') {
-  // myNum = Number(myNum); // converts string number to real number
-  myNum = +myNum; // second way to convert string number to real number
-}
-
-console.log(typeof myNum);
-
-// if your string is not actually a number, you will get a weird NaN output
-
-// if a number, but want to convert number to string:
-if (typeof myNum !== 'string') {
-  // myNum = String(123);
-  myNum = myNum.toString(); // convert to string
-
-}
-
-console.log(typeof myNum)
-
-// BOOLEAN type conversion
-
-myNum = 123;
-
-if (typeof myNum !== 'string') {
-  myNum = Boolean(myNum);
-}
-
-console.log(typeof myNum, myNum); // type is boolean, and myNum value is true
-
-// truthy and falsey values apply here
-
-// exceptions to typeof are Arrays and NaN
-console.log(Array.isArray([]), isNaN(NaN));
+/*
+    ☑️ create a variable "numOfWeeks" and save the number 0 in it
+    ☑️ write an "if" statement that checks if the value of "numOfWeeks" is a "number" type
+    ☑️ inside the "if" block, use let to create a variable "areNoWeeks", then using the value of numOfWeeks, fill this variable with a boolean (should be false if numOfWeeks is zero, and true otherwise)
+    ☑️ outside the "if" block, print the value of "areNoWeeks" -- what is it?
+    ☑️ can you fix this so "areNoWeeks" prints out a boolean?
+*/
   
+const numOfWeeks = 0;
 
+let areNoWeeks;
+
+if (typeof numOfWeeks === "number") {
+  console.log("Its a number");
+  areNoWeeks = Boolean(numOfWeeks);
+}
+
+console.log(areNoWeeks);
 
 
 
