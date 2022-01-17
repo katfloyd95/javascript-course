@@ -390,6 +390,7 @@
   // product.soldOut = true;
   // console.log(product);
 
+
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
   // 5.9 Value vs. Reference
@@ -398,51 +399,87 @@
 
   // an array of a list of different users
 
-  const users = [
-    {
-      name: "Aaron",
-      age: 27,
-      tags: ['new-user', 'javascript']
-    },
-    {
-      name: "Phillip",
-      age: 30,
-      tags: ['javascript']
-    },
-    {
-      name: "Jan",
-      age: 25,
-      tags: []
-    } 
-  ];
+  // const users = [
+  //   {
+  //     name: "Aaron",
+  //     age: 27,
+  //     tags: ['new-user', 'javascript']
+  //   },
+  //   {
+  //     name: "Phillip",
+  //     age: 30,
+  //     tags: ['javascript']
+  //   },
+  //   {
+  //     name: "Jan",
+  //     age: 25,
+  //     tags: []
+  //   } 
+  // ];
 
-  // by value assignment (all primitive data types):
-  const age = 28;
-  let age2 = age; // this is copying the previous line and creating a new variable with the same value (age)
+  // // by value assignment (all primitive data types):
+  // const age = 28;
+  // let age2 = age; // this is copying the previous line and creating a new variable with the same value (age)
 
-  age2 = 27; // since age2 is a copy of age, the reassignment of age2 does not affect the value of age
+  // age2 = 27; // since age2 is a copy of age, the reassignment of age2 does not affect the value of age
 
-  console.log(age, age2);
+  // console.log(age, age2);
 
-  // by reference assignment (all compound data types):
-  const names = ['Aaron'];
-  let names2 = names; 
+  // // by reference assignment (all compound data types):
+  // const names = ['Aaron'];
+  // let names2 = names; 
 
-  names2.push('Jan'); // when you do this, 'Jan' is pushed to the names AND names2 arrays
-  // this is because under the hood, names and names2 are the same array
+  // names2.push('Jan'); // when you do this, 'Jan' is pushed to the names AND names2 arrays
+  // // this is because under the hood, names and names2 are the same array
 
-  console.log(names, names2); // outputs: ['Aaron', 'Jan ] ['Aaron', 'Jan ]
+  // console.log(names, names2); // outputs: ['Aaron', 'Jan ] ['Aaron', 'Jan ]
   
-  const user = {name: "Aaron"};
-  let name2 = user;
-  let name3 = name2;
-  let name4 = name3;
+  // const user = {name: "Aaron"};
+  // let name2 = user;
+  // let name3 = name2;
+  // let name4 = name3;
 
-  user.name= "Jan";
+  // user.name= "Jan";
 
-  console.log(name3, name4); // outputs {name: "Jan"} {name: "Jan"}
+  // console.log(name3, name4); // outputs {name: "Jan"} {name: "Jan"}
 
-  
+  //////////////////////////////////////////////////////////////////////////////////////////////
+
+  // 5.10: Undefined, Null, NaN
+
+  // these are weird types
+
+  // undefined:
+  let name;
+  console.log(name); // not defined as anything
+
+  const user = {
+    name: 'Aaron'
+  };
+
+  console.log(user.age); // undefined, because age doesn't exist
+
+  // null: a way to explicitly input undefined for something
+  const user2 = {
+    name: "Aaron",
+    age: null
+  }
+
+  console.log(user2.age); // outputs null
+
+  // example of when null is applied:
+  const customer = {
+    name: "Jack",
+    ccNum: 1234
+  }
+
+  // then the ccNum is removed for a customer's profile:
+  customer.ccNum = null;
+  console.log(customer.ccNum); // indicates here that there used to be a value for ccNum, but now it has been removed
+
+  // NaN (not a number): usually arises from an error
+
+  console.log(10 + user.age); // outputs NaN before user.age is undefined
 
 
 
