@@ -450,36 +450,124 @@
   // these are weird types
 
   // undefined:
-  let name;
-  console.log(name); // not defined as anything
+  // let name;
+  // console.log(name); // not defined as anything
 
-  const user = {
-    name: 'Aaron'
-  };
+  // const user = {
+  //   name: 'Aaron'
+  // };
 
-  console.log(user.age); // undefined, because age doesn't exist
+  // console.log(user.age); // undefined, because age doesn't exist
 
-  // null: a way to explicitly input undefined for something
-  const user2 = {
-    name: "Aaron",
-    age: null
+  // // null: a way to explicitly input undefined for something
+  // const user2 = {
+  //   name: "Aaron",
+  //   age: null
+  // }
+
+  // console.log(user2.age); // outputs null
+
+  // // example of when null is applied:
+  // const customer = {
+  //   name: "Jack",
+  //   ccNum: 1234
+  // }
+
+  // // then the ccNum is removed for a customer's profile:
+  // customer.ccNum = null;
+  // console.log(customer.ccNum); // indicates here that there used to be a value for ccNum, but now it has been removed
+
+  // // NaN (not a number): usually arises from an error
+
+  // console.log(10 + user.age); // outputs NaN before user.age is undefined
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+
+  // 5.10: Truthy and Falsey
+
+  // conditionals - truthy, falsey, chaining, scope
+
+  const num = 5;
+
+  // TRUTHY
+
+  if (123) {
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
   }
 
-  console.log(user2.age); // outputs null
-
-  // example of when null is applied:
-  const customer = {
-    name: "Jack",
-    ccNum: 1234
+  if ('nfdjsk') {
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
   }
 
-  // then the ccNum is removed for a customer's profile:
-  customer.ccNum = null;
-  console.log(customer.ccNum); // indicates here that there used to be a value for ccNum, but now it has been removed
+  if (num) { // if num exists, it's true
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
+  }
 
-  // NaN (not a number): usually arises from an error
+  // empty arrays and objects are truthys
 
-  console.log(10 + user.age); // outputs NaN before user.age is undefined
+  if ([]) {
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
+  }
+
+  if ({}) {
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
+  }
+
+  // FALSEY:
+
+  // NUMBER 0 IS FALSEY
+
+  if (0) {
+    console.log('That was true'); 
+  } else {
+    console.log("That was false"); // false
+  }
+
+  if (undefined) {
+    console.log('That was true'); 
+  } else {
+    console.log("That was false"); // false
+  }
+
+  if (null) {
+    console.log('That was true'); 
+  } else {
+    console.log("That was false"); // false
+  }
+
+  if (NaN) {
+    console.log('That was true'); 
+  } else {
+    console.log("That was false"); // false
+  }
+
+  if ("") {
+    console.log('That was true'); 
+  } else {
+    console.log("That was false"); // false
+  }
+
+  if ([].length) { // equals 0
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
+  }
+
+  if ( Object.keys({}).length ) { // equals 0
+    console.log('That was true'); // true
+  } else {
+    console.log("That was false");
+  }
 
 
 
