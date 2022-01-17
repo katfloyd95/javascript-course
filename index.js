@@ -265,29 +265,65 @@
 
 // arrays are a compound data type: usually store things in compound data types
 
-const nums = [1, 2, 3];
-const strings = [true, 'hi', 'how are you', false]; // you can also use booleans and strings in arrays
+// const nums = [1, 2, 3];
+// const strings = [true, 'hi', 'how are you', false]; // you can also use booleans and strings in arrays
 
-console.log(nums.length);
-console.log(nums[0]);
+// console.log(nums.length);
+// console.log(nums[0]);
 
-// Array Method #1 - Add an element
+// // Array Method #1 - Add an element
 
-nums.push(4); // adds an item to the end of the array
+// nums.push(4); // adds an item to the end of the array
 
-// Array Method #2 - Remove an element
+// // Array Method #2 - Remove an element
 
-nums.pop(); // removes last element of the array
+// nums.pop(); // removes last element of the array
 
-const last = nums.pop(); // this is removing the last element of an array, and storing that removed element into a variable name
+// const last = nums.pop(); // this is removing the last element of an array, and storing that removed element into a variable name
 
-// Array Method #3 - assign an index in an array a certain element
+// // Array Method #3 - assign an index in an array a certain element
 
-nums[0] = 0; // this changes the 0 index position element in an array to 0
+// nums[0] = 0; // this changes the 0 index position element in an array to 0
 
-console.log(nums);
+// console.log(nums);
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// 5.8 Objects
+
+// compound data type
+
+const name = 'Kat';
+const age = 26;
+const hasJob = false;
+
+// how to take the assigned values and place into an object
+
+// Key, Colon, Value
+
+const user = {
+  name: 'Kat',
+  age: 26,
+  hasJob: false,
+  socialMedia: {
+    twitter: '',
+    facebook: ''
+  } // it's optional to have a comma on the last one, say for example on this line
+}
+
+console.log(user.name); // dot syntax
+console.log(user['name']); // string literal indexing, but be careful, because you can also pass in a variable key
+
+const key = 'name';
+console.log(user[key]); // variable syntax
+
+// Reassigning an element in object:
+
+console.log(user.age); // age = 26
+user.age = 28; // this works because const does not apply to compound data types, but you cannot reassign user
+console.log(user.age); // age = 28 
+
+console.log(user.socialMedia.twitter);
 
 
 
