@@ -623,29 +623,93 @@
 
   // 5.13 Variable Scope
 
-  const firstName = "Kat";
-  const lastName = "Floyd"
+//   const firstName = "Kat";
+//   const lastName = "Floyd"
 
-  if (firstName && lastName) {
-    const fullName =`${firstName} ${lastName}`;
-  }
+//   if (firstName && lastName) {
+//     const fullName =`${firstName} ${lastName}`;
+//   }
 
-  // console.log(fullName); // but fullName is not defined outside of the if statement, so doesn't work
+//   // console.log(fullName); // but fullName is not defined outside of the if statement, so doesn't work
 
-  // but if you define fullName outside of the if statement, then you can log fullName into console
-  let fullName;
+//   // but if you define fullName outside of the if statement, then you can log fullName into console
+//   let fullName;
 
-  if (firstName && lastName) {
-    fullName =`${firstName} ${lastName}`;
-  }
+//   if (firstName && lastName) {
+//     fullName =`${firstName} ${lastName}`;
+//   }
 
-  console.log(fullName);
+//   console.log(fullName);
 
-// variables get passed down from the scope they are created in, but they don't get passed up from the scope they are created in
+// // variables get passed down from the scope they are created in, but they don't get passed up from the scope they are created in
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
+// 5.14 Type Detection & Conversion
 
+// detecting and converting different JS types
 
+let myNum = 123;
+myNum = '123'; // there is no way to know from the frontend whether 123 is a number or string
+
+if (typeof myNum === 'number') {
+  console.log("its a number");
+} else if (typeof myNum === "string") {
+  console.log("its a string");
+};
+
+// typeof is the only function that works with a space, no need for function()
+
+const myArr = [1,2,3];
+
+// console.log(typeof myArr); // says that it's an object, because typeof doesn't detect arrays
+
+// special function that you have to use detect arrays:
+if (Array.isArray(myArr)) {
+  console.log('its an array');
+}
+
+// detecting NaN:
+console.log(typeof NaN); // typeof detects NaN as a number, which is incorrect
+console.log(isNaN(NaN)); // this is how you properly detect an NaN
+
+// CHANGING THE TYPE:
+
+// if my number is actually not a number (e.g. a string), how to convert to number in if-statement:
+myNum = 123;
+
+if (typeof myNum !== 'number') {
+  // myNum = Number(myNum); // converts string number to real number
+  myNum = +myNum; // second way to convert string number to real number
+}
+
+console.log(typeof myNum);
+
+// if your string is not actually a number, you will get a weird NaN output
+
+// if a number, but want to convert number to string:
+if (typeof myNum !== 'string') {
+  // myNum = String(123);
+  myNum = myNum.toString(); // convert to string
+
+}
+
+console.log(typeof myNum)
+
+// BOOLEAN type conversion
+
+myNum = 123;
+
+if (typeof myNum !== 'string') {
+  myNum = Boolean(myNum);
+}
+
+console.log(typeof myNum, myNum); // type is boolean, and myNum value is true
+
+// truthy and falsey values apply here
+
+// exceptions to typeof are Arrays and NaN
+console.log(Array.isArray([]), isNaN(NaN));
   
 
 
