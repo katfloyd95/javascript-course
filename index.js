@@ -780,50 +780,79 @@
 
 // 5.15 For Loops
 
-let num = 0;
-num++; // this adds 1 to num, same as num = num + 1
-console.log(num); // equals 1
+// let num = 0;
+// num++; // this adds 1 to num, same as num = num + 1
+// console.log(num); // equals 1
 
-// a for loop contains 3 statements: 1) Declaration 2) Conditional 3) Increment of Index
-for (let i = 0; i < 10; i++) {
-  console.log(i); // a way to show the increments of the for loop
-  break; // stops the loop
+// // a for loop contains 3 statements: 1) Declaration 2) Conditional 3) Increment of Index
+// for (let i = 0; i < 10; i++) {
+//   console.log(i); // a way to show the increments of the for loop
+//   break; // stops the loop
+// }
+
+// const firstName = "Kat"; 
+
+// let aCount = 0;
+
+// for (let i = 0; i < firstName.length; i++) {
+//   let char = firstName[i];
+//   console.log(char);
+//   if (char === 'a' || char === 'A') { // NOTE: strings characterize capital A and lowercase a as different
+//     aCount++;
+//   }
+// }
+
+// console.log(aCount);
+
+// const nums = [100,200,300];
+
+// const doubled = [];
+
+// for (let i = 0; i < nums.length; i++) {
+//   let num = nums[i];
+//   console.log(num);
+//   doubled.push(nums[i] * 2);
+//   console.log(doubled);
+// }
+
+// console.log(doubled);
+
+// for (let i = 0; i < nums.length; i++) {
+//   console.log(nums[i]);
+//   nums[i] = nums[i] * 2; // overrides each index with a new value
+// }
+
+// console.log(nums);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.16 For-IN & For-OF Loops
+
+// for OF loop (DECLARATIVE for loop)
+
+const names = ["Kat", "Ellen", "Bryanna"];
+
+for (let name of names) {
+  console.log(name);
 }
 
-const firstName = "Kat"; 
+// called Declarative because this for loop is much more readable
+// NOTE: you cannot do an index i, because there is no index
+// For OF loops are great for values, but not if you need an index
 
-let aCount = 0;
-
-for (let i = 0; i < firstName.length; i++) {
-  let char = firstName[i];
-  console.log(char);
-  if (char === 'a' || char === 'A') { // NOTE: strings characterize capital A and lowercase a as different
-    aCount++;
-  }
+const user = {
+  name: "Kat",
+  age: 26
 }
 
-console.log(aCount);
+// NOTE: unlike with arrays, the order of values within objects is not guaranteed
 
-const nums = [100,200,300];
+// for IN loop (IMPERATIVE for loop)
 
-const doubled = [];
-
-for (let i = 0; i < nums.length; i++) {
-  let num = nums[i];
-  console.log(num);
-  doubled.push(nums[i] * 2);
-  console.log(doubled);
+for (let key in user) {
+  console.log(key); // outputs name and age
+  console.log(user[key]); // outputs Kat and 26
 }
-
-console.log(doubled);
-
-for (let i = 0; i < nums.length; i++) {
-  console.log(nums[i]);
-  nums[i] = nums[i] * 2; // overrides each index with a new value
-}
-
-console.log(nums);
-
 
 
 
