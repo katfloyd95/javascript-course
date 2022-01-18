@@ -725,56 +725,106 @@
     ☑️ inside the "else" block, push a string "Mon" into the array
 */
 
-const days = [];
+// const days = [];
 
-if (days.length) {
-  console.log("There are items in here");
-  console.log(days[0]);
-} else {
-  console.log("There are no items in here");
-  days.push("Mon");
-};
+// if (days.length) {
+//   console.log("There are items in here");
+//   console.log(days[0]);
+// } else {
+//   console.log("There are no items in here");
+//   days.push("Mon");
+// };
 
-console.log(days);
+// console.log(days);
 
 
-/*
-    ☑️ create an "Array Literal" and save it in the variable "months" and add the values "Jan" and "Feb"
-    ☑️ write an "if" statement to test if the array has any items AND the first month starts with "J" 
-    ☑️ inside the "if" block, print out the first item from the array
-    ☑️ inside the "else" block, push a string "Jan" into the array.
-    ☑️ outside the "if else" blocks, print out the "type of" the "months" variable (HINT: arrays have a special type function)
-*/
+// /*
+//     ☑️ create an "Array Literal" and save it in the variable "months" and add the values "Jan" and "Feb"
+//     ☑️ write an "if" statement to test if the array has any items AND the first month starts with "J" 
+//     ☑️ inside the "if" block, print out the first item from the array
+//     ☑️ inside the "else" block, push a string "Jan" into the array.
+//     ☑️ outside the "if else" blocks, print out the "type of" the "months" variable (HINT: arrays have a special type function)
+// */
 
-const months = ["Jan", "Feb"];
+// const months = ["Jan", "Feb"];
 
-if (months && months[0][0]) {
-  console.log("There are items in here");
-  console.log(months[0]);
-} else {
-  months.push("Jan");
-};
+// if (months && months[0][0]) {
+//   console.log("There are items in here");
+//   console.log(months[0]);
+// } else {
+//   months.push("Jan");
+// };
 
-console.log(Array.isArray(months));
+// console.log(Array.isArray(months));
 
-/*
-    ☑️ create a variable "numOfWeeks" and save the number 0 in it
-    ☑️ write an "if" statement that checks if the value of "numOfWeeks" is a "number" type
-    ☑️ inside the "if" block, use let to create a variable "areNoWeeks", then using the value of numOfWeeks, fill this variable with a boolean (should be false if numOfWeeks is zero, and true otherwise)
-    ☑️ outside the "if" block, print the value of "areNoWeeks" -- what is it?
-    ☑️ can you fix this so "areNoWeeks" prints out a boolean?
-*/
+// /*
+//     ☑️ create a variable "numOfWeeks" and save the number 0 in it
+//     ☑️ write an "if" statement that checks if the value of "numOfWeeks" is a "number" type
+//     ☑️ inside the "if" block, use let to create a variable "areNoWeeks", then using the value of numOfWeeks, fill this variable with a boolean (should be false if numOfWeeks is zero, and true otherwise)
+//     ☑️ outside the "if" block, print the value of "areNoWeeks" -- what is it?
+//     ☑️ can you fix this so "areNoWeeks" prints out a boolean?
+// */
   
-const numOfWeeks = 0;
+// const numOfWeeks = 0;
 
-let areNoWeeks;
+// let areNoWeeks;
 
-if (typeof numOfWeeks === "number") {
-  console.log("Its a number");
-  areNoWeeks = Boolean(numOfWeeks);
+// if (typeof numOfWeeks === "number") {
+//   console.log("Its a number");
+//   areNoWeeks = Boolean(numOfWeeks);
+// }
+
+// console.log(areNoWeeks);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.15 For Loops
+
+let num = 0;
+num++; // this adds 1 to num, same as num = num + 1
+console.log(num); // equals 1
+
+// a for loop contains 3 statements: 1) Declaration 2) Conditional 3) Increment of Index
+for (let i = 0; i < 10; i++) {
+  console.log(i); // a way to show the increments of the for loop
+  break; // stops the loop
 }
 
-console.log(areNoWeeks);
+const firstName = "Kat"; 
+
+let aCount = 0;
+
+for (let i = 0; i < firstName.length; i++) {
+  let char = firstName[i];
+  console.log(char);
+  if (char === 'a' || char === 'A') { // NOTE: strings characterize capital A and lowercase a as different
+    aCount++;
+  }
+}
+
+console.log(aCount);
+
+const nums = [100,200,300];
+
+const doubled = [];
+
+for (let i = 0; i < nums.length; i++) {
+  let num = nums[i];
+  console.log(num);
+  doubled.push(nums[i] * 2);
+  console.log(doubled);
+}
+
+console.log(doubled);
+
+for (let i = 0; i < nums.length; i++) {
+  console.log(nums[i]);
+  nums[i] = nums[i] * 2; // overrides each index with a new value
+}
+
+console.log(nums);
+
+
 
 
 
