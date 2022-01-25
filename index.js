@@ -830,29 +830,74 @@
 
 // for OF loop (DECLARATIVE for loop)
 
+// const names = ["Kat", "Ellen", "Bryanna"];
+
+// for (let name of names) {
+//   console.log(name);
+// }
+
+// // called Declarative because this for loop is much more readable
+// // NOTE: you cannot do an index i, because there is no index
+// // For OF loops are great for values, but not if you need an index
+
+// const user = {
+//   name: "Kat",
+//   age: 26
+// }
+
+// // NOTE: unlike with arrays, the order of values within objects is not guaranteed
+
+// // for IN loop (IMPERATIVE for loop)
+
+// for (let key in user) {
+//   console.log(key); // outputs name and age
+//   console.log(user[key]); // outputs Kat and 26
+// }
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.17 While loops (& common patterns)
+
+// a while loop only has the break condition that a for loop has
+
+let i = 0;
+
+while (i < 10) {
+  // do something:
+  console.log(i);
+  i++;
+};
+
+// if we don't know exactly how many iterations we are going need, then use a while loop
+
+// Example: how many times can we double a number before it reaches 1000?
+
+let num = 13;
+
+let counter = 0;
+
+while (num < 1000) {
+  num *= 2; // multiply num by 2 each round
+  console.log(num);
+  counter++;
+}
+
+console.log(counter);
+
 const names = ["Kat", "Ellen", "Bryanna"];
 
-for (let name of names) {
-  console.log(name);
+while (true) {
+  const foundName = names.pop();
+  console.log(foundName);
+  if (foundName[0] === 'E') {
+    console.log('Found E Name', foundName);
+    break;
+  }
 }
 
-// called Declarative because this for loop is much more readable
-// NOTE: you cannot do an index i, because there is no index
-// For OF loops are great for values, but not if you need an index
+// you ALWAYS need a break in a while loop, either conditionally or with 'break;'
 
-const user = {
-  name: "Kat",
-  age: 26
-}
 
-// NOTE: unlike with arrays, the order of values within objects is not guaranteed
-
-// for IN loop (IMPERATIVE for loop)
-
-for (let key in user) {
-  console.log(key); // outputs name and age
-  console.log(user[key]); // outputs Kat and 26
-}
 
 
 
