@@ -860,42 +860,148 @@
 
 // a while loop only has the break condition that a for loop has
 
-let i = 0;
+// let i = 0;
 
-while (i < 10) {
-  // do something:
-  console.log(i);
-  i++;
-};
+// while (i < 10) {
+//   // do something:
+//   console.log(i);
+//   i++;
+// };
 
 // if we don't know exactly how many iterations we are going need, then use a while loop
 
 // Example: how many times can we double a number before it reaches 1000?
 
-let num = 13;
+// let num = 13;
 
-let counter = 0;
+// let counter = 0;
 
-while (num < 1000) {
-  num *= 2; // multiply num by 2 each round
-  console.log(num);
-  counter++;
-}
+// while (num < 1000) {
+//   num *= 2; // multiply num by 2 each round
+//   console.log(num);
+//   counter++;
+// }
 
-console.log(counter);
+// console.log(counter);
 
-const names = ["Kat", "Ellen", "Bryanna"];
+// const names = ["Kat", "Ellen", "Bryanna"];
 
-while (true) {
-  const foundName = names.pop();
-  console.log(foundName);
-  if (foundName[0] === 'E') {
-    console.log('Found E Name', foundName);
-    break;
-  }
-}
+// while (true) {
+//   const foundName = names.pop();
+//   console.log(foundName);
+//   if (foundName[0] === 'E') {
+//     console.log('Found E Name', foundName);
+//     break;
+//   }
+// }
 
 // you ALWAYS need a break in a while loop, either conditionally or with 'break;'
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+// JS Practice 4
+
+/*
+ JS Practice 4
+
+ this time you'll get a little less direction, 
+ use "don't forget javascript" cheat sheet & re-watch the videos if needed!
+*/
+
+/*
+    ☑️ create a string that contains your name
+    ☑️ for loop over it, and print character to the console, one at a time
+*/
+
+const names = ['Kat'];
+
+for (var i = 0; i < names[0].length; i++) {
+  let selectName = names[0];
+  let charName = selectName[i];
+  console.log(charName);
+}
+
+/*
+    ☑️ create an array with the first names of everyone in your family
+    ☑️ for loop over the array, and print out the names one at a time
+    ☑️ now, change your loop to print out first and last name on each iteration!
+        (hint, your last name is the same for you whole family, right?)
+*/
+
+const firstNames = ['Kat', 'Alex', 'Monika', "Douglas"];
+
+for (var i = 0; i < firstNames.length; i++) {
+  let firstNameList = firstNames[i];
+  console.log(firstNameList);
+  let lastName = 'Floyd';
+  const fullNames = `${firstNames[i]} ${lastName}`;
+  console.log(fullNames);
+}
+
+/*
+    ☑️ copy the code you wrote above and paste it below this comment
+    ☑️ now "refactor" this code into a "declarative" "for of" loop
+*/
+
+for (var firstName of firstNames) {
+  console.log(firstName);
+  let lastName = 'Floyd';
+  const fullNames = `${firstName} ${lastName}`;
+  console.log(fullNames);
+}
+
+
+/*
+    ☑️ now, declare an index variable "i" (on its own) and set it to zero
+    ☑️ now write a while loop, with the break condition being i < 10. DON'T SAVE THE FILE
+    ☑️ ...because you need to increment i by one each time the loop runs (do this inside the loop body)
+    ☑️ now console log i in the body, and make sure it's printing numbers 0-9
+*/
+
+let i = 0;
+
+while (i < 10) {
+  i++;
+  console.log(i);
+}
+
+// you can also use while (i++ < 10) {}
+
+
+/*
+    ☑️ ok take the while loop code from above and paste it below
+    ☑️ now, change i to be an empty string
+    ☑️ set the break condition to be when the string length is > 10
+    ☑️ and add a new "A" character to the end of i every time the loop runs.
+*/
+
+let i = "";
+
+while (i.length < 10) {
+  i+= "A";
+  console.log(i);
+}
+
+/*
+    ☑️ still with me? let's create an object in variable "computer"
+    ☑️ set the following keys & values: ram is "8GB", cpu is "quad core", storage is "1TB"
+    ☑️ now, loop over the object with a "for in" loop
+    ☑️ on each loop iteration, print out the key and value in a string formatted like so:
+        "ram spec is 8GB", "cpu spec is quad core", "storage spec is 1TB"
+*/
+
+var computer = {
+    ram: "8GB",
+    cpu: "quad core",
+    storage: "1TB"
+  }
+
+for (var data in computer) {
+  console.log(data);
+  let description = [`${data} is ${computer[data]}`];
+  console.log(description);
+}
+
 
 
 
