@@ -1082,34 +1082,63 @@
 // Examples: anonymous functions and closures
 
 // This is what a standard function looks like (stored in a variable):
-var addNums = function(n1, n2) {
-
-}
-
-// An anonymous function is when the function isn't stored within a variable: (it won't work)
-// function(n1, n2) {
+// var addNums = function(n1, n2) {
 
 // }
 
-function createAddFn(n1) {
-  return function(n2) { // this is an anonymous function
-    return n1 + n2;
+// // An anonymous function is when the function isn't stored within a variable: (it won't work)
+// // function(n1, n2) {
+
+// // }
+
+// function createAddFn(n1) {
+//   return function(n2) { // this is an anonymous function
+//     return n1 + n2;
+//   }
+// }
+
+// // Closure
+// var addFive = createAddFn(5); // filling in the n1 parameter
+// // so the anonymous function inside createAddFun(5) is now stored in the variable addFive
+// // the variable n1 is now frozen in the new definition addFive
+// console.log(addFive(5));
+// console.log(addFive(2));
+// console.log(addFive(0));
+
+// var addTwo = createAddFn(2);
+// console.log(addTwo(5));
+// console.log(addTwo(2));
+// console.log(addTwo(0));
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.21 Methods
+
+// a function inside an object is called a Method
+
+const user = {
+  name: "Kat",
+  age: 26,
+  sayHello: function(){
+    console.log('Hello there');
   }
 }
 
-// Closure
-var addFive = createAddFn(5); // filling in the n1 parameter
-// so the anonymous function inside createAddFun(5) is now stored in the variable addFive
-// the variable n1 is now frozen in the new definition addFive
-console.log(addFive(5));
-console.log(addFive(2));
-console.log(addFive(0));
+user.sayHello(); // you call it like a normal function
 
-var addTwo = createAddFn(2);
-console.log(addTwo(5));
-console.log(addTwo(2));
-console.log(addTwo(0));
+// You're likely not going to create your own methods, but you are going to use them SO MUCH!
 
+// Examples:
+const num = 123;
+num.toString();
+
+const arr = [1,2,3];
+arr.push(4);
+console.log(arr);
+arr.pop();
+console.log(arr);
+
+// there are all methods that are defined on different data types
 
 
 
