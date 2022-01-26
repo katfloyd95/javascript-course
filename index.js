@@ -1012,44 +1012,68 @@
 
 // Deterministic
 
-console.log(Number('123'));
+// console.log(Number('123'));
 
-const newNum = Number('123');
-console.log(newNum, typeof newNum);
+// const newNum = Number('123');
+// console.log(newNum, typeof newNum);
 
-function addTwo(num) { // inside the parenthesis is a placeholder for an input, AKA parameter
-  return num; // the new value comes out the other end with the return value
+// function addTwo(num) { // inside the parenthesis is a placeholder for an input, AKA parameter
+//   return num; // the new value comes out the other end with the return value
+// }
+
+// console.log(addTwo(1));
+// const myNum = addTwo(1);
+// console.log(myNum);
+
+// // you can have another function that also uses the same parameter 'num', but it only says exclusive to it's own function environment
+
+// function addThree(num) {
+//   return num;
+// }
+
+// console.log(addThree(2));
+
+// // this shows that if we have a constant variable num outside of the function, the parameter will not input that value
+// // unless the constant variable specifically inputs that variable name
+// // the inner scope will override the outer scope
+
+// function addOne(num) {
+//   console.log(num);
+//   const twoAdded = num + 2;
+//   console.log(twoAdded);
+//   return twoAdded;
+//   // return num + 2; is also an option:
+// }
+
+// const myFirstNum = addOne(1); // function is getting called with 1 as the argument
+// const mySecondNum = addOne(2); // called with 2 as the argument
+// const myThirdNum = addOne(3);
+// console.log(myFirstNum, mySecondNum, myThirdNum);
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.19 Function Expressions, Hoisting
+
+// Function statement:
+const newNum = addTwo(5);
+console.log(newNum);
+
+// Function definition:
+function addTwo(num) {
+  return num + 1;
 }
 
-console.log(addTwo(1));
-const myNum = addTwo(1);
-console.log(myNum);
-
-// you can have another function that also uses the same parameter 'num', but it only says exclusive to it's own function environment
-
-function addThree(num) {
-  return num;
+// Alternative way to define functions- Function Expression:
+const addThree = function(num) {
+  return num + 3;
 }
 
-console.log(addThree(2));
+// The function statement works before the defintion because our function gets moved to the top when our code gets run
+// This is called 'Hoisting'
+// BUT!!! this does not work the same way for function expressions, even though they do the same thing
 
-// this shows that if we have a constant variable num outside of the function, the parameter will not input that value
-// unless the constant variable specifically inputs that variable name
-// the inner scope will override the outer scope
-
-function addOne(num) {
-  console.log(num);
-  const twoAdded = num + 2;
-  console.log(twoAdded);
-  return twoAdded;
-  // return num + 2; is also an option:
-}
-
-const myFirstNum = addOne(1); // function is getting called with 1 as the argument
-const mySecondNum = addOne(2); // called with 2 as the argument
-const myThirdNum = addOne(3);
-console.log(myFirstNum, mySecondNum, myThirdNum);
-
+const secondNum = addThree(5);
+console.log(newNum, secondNum);
 
 
 
