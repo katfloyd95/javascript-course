@@ -1116,31 +1116,69 @@
 
 // a function inside an object is called a Method
 
-const user = {
-  name: "Kat",
-  age: 26,
-  sayHello: function(){
-    console.log('Hello there');
-  }
-}
+// const user = {
+//   name: "Kat",
+//   age: 26,
+//   sayHello: function(){
+//     console.log('Hello there');
+//   }
+// }
 
-user.sayHello(); // you call it like a normal function
+// user.sayHello(); // you call it like a normal function
 
-// You're likely not going to create your own methods, but you are going to use them SO MUCH!
+// // You're likely not going to create your own methods, but you are going to use them SO MUCH!
 
-// Examples:
-const num = 123;
-num.toString();
+// // Examples:
+// const num = 123;
+// num.toString();
 
-const arr = [1,2,3];
-arr.push(4);
-console.log(arr);
-arr.pop();
-console.log(arr);
+// const arr = [1,2,3];
+// arr.push(4);
+// console.log(arr);
+// arr.pop();
+// console.log(arr);
 
 // there are all methods that are defined on different data types
 
+/////////////////////////////////////////////////////////////////////////////////
 
+// 5.20 String Methods
+
+const animal = "dogs are great";
+
+// length (only sting attribute)
+console.log(animal.length); // not a function, but an attribute on an object
+
+// indexOf (find a char or substring within a string)
+console.log(animal.indexOf('g'));
+console.log(animal.indexOf("great")); // finds the index where this word starts
+
+// slice (you want to define FROM which index, TO which index you want to slice from your string)
+console.log(animal.slice(1)); // the slice starts at index 1 (o) and ending at end "ogs are great"
+console.log(animal.slice(0, 4)); // second index is "up to, but not including" the character in the string
+console.log(animal.slice(-2)); // starting at a in "great" and ends at the end of our string
+
+// common mistake with slice: the above slices create a copy of a string, but not changing the original string animal
+// just store the sliced string into a new variable:
+const slicedAnimal = animal.slice(1);
+console.log(slicedAnimal);
+
+// toUpper / Lowercase
+console.log(animal.toUpperCase());
+console.log(animal.toLowerCase());
+
+// concat
+console.log(`${animal} (not)`);
+console.log(animal + " (really)");
+console.log(animal.concat(" (definitely)"));
+
+// replace
+console.log(animal.replace("dogs", "cats")); // replaces just one "dogs" in the string
+console.log(animal.replace(/dogs/g, "cats"));
+
+// split
+console.log(animal.split("")); // splits every character into it's own array index
+console.log(animal.split(" ")); // split the string apart at the spaces, and put each string into an array index
 
 
 
