@@ -1144,43 +1144,65 @@
 
 // 5.20 String Methods
 
-const animal = "dogs are great";
+// const animal = "dogs are great";
 
-// length (only sting attribute)
-console.log(animal.length); // not a function, but an attribute on an object
+// // length (only sting attribute)
+// console.log(animal.length); // not a function, but an attribute on an object
 
-// indexOf (find a char or substring within a string)
-console.log(animal.indexOf('g'));
-console.log(animal.indexOf("great")); // finds the index where this word starts
+// // indexOf (find a char or substring within a string)
+// console.log(animal.indexOf('g'));
+// console.log(animal.indexOf("great")); // finds the index where this word starts
 
-// slice (you want to define FROM which index, TO which index you want to slice from your string)
-console.log(animal.slice(1)); // the slice starts at index 1 (o) and ending at end "ogs are great"
-console.log(animal.slice(0, 4)); // second index is "up to, but not including" the character in the string
-console.log(animal.slice(-2)); // starting at a in "great" and ends at the end of our string
+// // slice (you want to define FROM which index, TO which index you want to slice from your string)
+// console.log(animal.slice(1)); // the slice starts at index 1 (o) and ending at end "ogs are great"
+// console.log(animal.slice(0, 4)); // second index is "up to, but not including" the character in the string
+// console.log(animal.slice(-2)); // starting at a in "great" and ends at the end of our string
 
-// common mistake with slice: the above slices create a copy of a string, but not changing the original string animal
-// just store the sliced string into a new variable:
-const slicedAnimal = animal.slice(1);
-console.log(slicedAnimal);
+// // common mistake with slice: the above slices create a copy of a string, but not changing the original string animal
+// // just store the sliced string into a new variable:
+// const slicedAnimal = animal.slice(1);
+// console.log(slicedAnimal);
 
-// toUpper / Lowercase
-console.log(animal.toUpperCase());
-console.log(animal.toLowerCase());
+// // toUpper / Lowercase
+// console.log(animal.toUpperCase());
+// console.log(animal.toLowerCase());
 
-// concat
-console.log(`${animal} (not)`);
-console.log(animal + " (really)");
-console.log(animal.concat(" (definitely)"));
+// // concat
+// console.log(`${animal} (not)`);
+// console.log(animal + " (really)");
+// console.log(animal.concat(" (definitely)"));
 
-// replace
-console.log(animal.replace("dogs", "cats")); // replaces just one "dogs" in the string
-console.log(animal.replace(/dogs/g, "cats"));
+// // replace
+// console.log(animal.replace("dogs", "cats")); // replaces just one "dogs" in the string
+// console.log(animal.replace(/dogs/g, "cats"));
 
-// split
-console.log(animal.split("")); // splits every character into it's own array index
-console.log(animal.split(" ")); // split the string apart at the spaces, and put each string into an array index
+// // split
+// console.log(animal.split("")); // splits every character into it's own array index
+// console.log(animal.split(" ")); // split the string apart at the spaces, and put each string into an array index
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
+// 5.23 Number Methods
+
+const num = 999;
+
+// toString
+console.log(num.toString()); // ouputs: 999;
+console.log(num.toString() + 111); // only adds 111 as a string-  output: 999111
+
+// toFixed
+console.log(num.toFixed(2)); // rounds to the second digit after the decimal
+// NOTE: toFixed also converts the number to a string
+console.log('$' + num.toFixed(2)); // for currencies- output: $999.000
+
+// Math.min, Math.max, parseInt
+console.log(Math.min(12, 222, 891, 5, -22)); // takes as many number as we want, so not a set number of parameters
+console.log(Math.max(12, 222, 891, 5, -22)); // same as Math.min, but maximum
+
+// Math.floor, Math.ceil
+console.log(Math.floor(999.999)); // rounds down your number- output: 999
+console.log(Math.ceil(999.001)); // rounds up your number- output: 1000
+console.log(parseInt(999.999)); // ignores any number after the decimal point
 
 
 
