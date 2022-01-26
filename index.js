@@ -1055,25 +1055,60 @@
 // 5.19 Function Expressions, Hoisting
 
 // Function statement:
-const newNum = addTwo(5);
-console.log(newNum);
+// const newNum = addTwo(5);
+// console.log(newNum);
 
-// Function definition:
-function addTwo(num) {
-  return num + 1;
+// // Function definition:
+// function addTwo(num) {
+//   return num + 1;
+// }
+
+// // Alternative way to define functions- Function Expression:
+// const addThree = function(num) {
+//   return num + 3;
+// }
+
+// // The function statement works before the defintion because our function gets moved to the top when our code gets run
+// // This is called 'Hoisting'
+// // BUT!!! this does not work the same way for function expressions, even though they do the same thing
+
+// const secondNum = addThree(5);
+// console.log(newNum, secondNum);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.20 Functions, the Weird Parts
+
+// Examples: anonymous functions and closures
+
+// This is what a standard function looks like (stored in a variable):
+var addNums = function(n1, n2) {
+
 }
 
-// Alternative way to define functions- Function Expression:
-const addThree = function(num) {
-  return num + 3;
+// An anonymous function is when the function isn't stored within a variable: (it won't work)
+// function(n1, n2) {
+
+// }
+
+function createAddFn(n1) {
+  return function(n2) { // this is an anonymous function
+    return n1 + n2;
+  }
 }
 
-// The function statement works before the defintion because our function gets moved to the top when our code gets run
-// This is called 'Hoisting'
-// BUT!!! this does not work the same way for function expressions, even though they do the same thing
+// Closure
+var addFive = createAddFn(5); // filling in the n1 parameter
+// so the anonymous function inside createAddFun(5) is now stored in the variable addFive
+// the variable n1 is now frozen in the new definition addFive
+console.log(addFive(5));
+console.log(addFive(2));
+console.log(addFive(0));
 
-const secondNum = addThree(5);
-console.log(newNum, secondNum);
+var addTwo = createAddFn(2);
+console.log(addTwo(5));
+console.log(addTwo(2));
+console.log(addTwo(0));
 
 
 
