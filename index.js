@@ -913,13 +913,13 @@
     ☑️ for loop over it, and print character to the console, one at a time
 */
 
-const names = ['Kat'];
+// const names = ['Kat'];
 
-for (var i = 0; i < names[0].length; i++) {
-  let selectName = names[0];
-  let charName = selectName[i];
-  console.log(charName);
-}
+// for (var i = 0; i < names[0].length; i++) {
+//   let selectName = names[0];
+//   let charName = selectName[i];
+//   console.log(charName);
+// }
 
 /*
     ☑️ create an array with the first names of everyone in your family
@@ -928,27 +928,27 @@ for (var i = 0; i < names[0].length; i++) {
         (hint, your last name is the same for you whole family, right?)
 */
 
-const firstNames = ['Kat', 'Alex', 'Monika', "Douglas"];
+// const firstNames = ['Kat', 'Alex', 'Monika', "Douglas"];
 
-for (var i = 0; i < firstNames.length; i++) {
-  let firstNameList = firstNames[i];
-  console.log(firstNameList);
-  let lastName = 'Floyd';
-  const fullNames = `${firstNames[i]} ${lastName}`;
-  console.log(fullNames);
-}
+// for (var i = 0; i < firstNames.length; i++) {
+//   let firstNameList = firstNames[i];
+//   console.log(firstNameList);
+//   let lastName = 'Floyd';
+//   const fullNames = `${firstNames[i]} ${lastName}`;
+//   console.log(fullNames);
+// }
 
 /*
     ☑️ copy the code you wrote above and paste it below this comment
     ☑️ now "refactor" this code into a "declarative" "for of" loop
 */
 
-for (var firstName of firstNames) {
-  console.log(firstName);
-  let lastName = 'Floyd';
-  const fullNames = `${firstName} ${lastName}`;
-  console.log(fullNames);
-}
+// for (var firstName of firstNames) {
+//   console.log(firstName);
+//   let lastName = 'Floyd';
+//   const fullNames = `${firstName} ${lastName}`;
+//   console.log(fullNames);
+// }
 
 
 /*
@@ -958,12 +958,12 @@ for (var firstName of firstNames) {
     ☑️ now console log i in the body, and make sure it's printing numbers 0-9
 */
 
-let i = 0;
+// let i = 0;
 
-while (i < 10) {
-  i++;
-  console.log(i);
-}
+// while (i < 10) {
+//   i++;
+//   console.log(i);
+// }
 
 // you can also use while (i++ < 10) {}
 
@@ -975,12 +975,12 @@ while (i < 10) {
     ☑️ and add a new "A" character to the end of i every time the loop runs.
 */
 
-let i = "";
+// let i = "";
 
-while (i.length < 10) {
-  i+= "A";
-  console.log(i);
-}
+// while (i.length < 10) {
+//   i+= "A";
+//   console.log(i);
+// }
 
 /*
     ☑️ still with me? let's create an object in variable "computer"
@@ -990,19 +990,65 @@ while (i.length < 10) {
         "ram spec is 8GB", "cpu spec is quad core", "storage spec is 1TB"
 */
 
-var computer = {
-    ram: "8GB",
-    cpu: "quad core",
-    storage: "1TB"
-  }
+// var computer = {
+//     ram: "8GB",
+//     cpu: "quad core",
+//     storage: "1TB"
+//   }
 
-for (var data in computer) {
-  console.log(data);
-  let description = [`${data} is ${computer[data]}`];
-  console.log(description);
+// for (var data in computer) {
+//   console.log(data);
+//   let description = [`${data} is ${computer[data]}`];
+//   console.log(description);
+// }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.18 Functions
+
+// the point of functions is not to repeat yourself
+
+// converts an input into an output, and works the same way every time
+
+// Deterministic
+
+console.log(Number('123'));
+
+const newNum = Number('123');
+console.log(newNum, typeof newNum);
+
+function addTwo(num) { // inside the parenthesis is a placeholder for an input, AKA parameter
+  return num; // the new value comes out the other end with the return value
 }
 
+console.log(addTwo(1));
+const myNum = addTwo(1);
+console.log(myNum);
 
+// you can have another function that also uses the same parameter 'num', but it only says exclusive to it's own function environment
+
+function addThree(num) {
+  return num;
+}
+
+console.log(addThree(2));
+
+// this shows that if we have a constant variable num outside of the function, the parameter will not input that value
+// unless the constant variable specifically inputs that variable name
+// the inner scope will override the outer scope
+
+function addOne(num) {
+  console.log(num);
+  const twoAdded = num + 2;
+  console.log(twoAdded);
+  return twoAdded;
+  // return num + 2; is also an option:
+}
+
+const myFirstNum = addOne(1); // function is getting called with 1 as the argument
+const mySecondNum = addOne(2); // called with 2 as the argument
+const myThirdNum = addOne(3);
+console.log(myFirstNum, mySecondNum, myThirdNum);
 
 
 
