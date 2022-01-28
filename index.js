@@ -1184,27 +1184,68 @@
 
 // 5.23 Number Methods
 
-const num = 999;
+// const num = 999;
 
-// toString
-console.log(num.toString()); // ouputs: 999;
-console.log(num.toString() + 111); // only adds 111 as a string-  output: 999111
+// // toString
+// console.log(num.toString()); // ouputs: 999;
+// console.log(num.toString() + 111); // only adds 111 as a string-  output: 999111
 
-// toFixed
-console.log(num.toFixed(2)); // rounds to the second digit after the decimal
-// NOTE: toFixed also converts the number to a string
-console.log('$' + num.toFixed(2)); // for currencies- output: $999.000
+// // toFixed
+// console.log(num.toFixed(2)); // rounds to the second digit after the decimal
+// // NOTE: toFixed also converts the number to a string
+// console.log('$' + num.toFixed(2)); // for currencies- output: $999.000
 
-// Math.min, Math.max, parseInt
-console.log(Math.min(12, 222, 891, 5, -22)); // takes as many number as we want, so not a set number of parameters
-console.log(Math.max(12, 222, 891, 5, -22)); // same as Math.min, but maximum
+// // Math.min, Math.max, parseInt
+// console.log(Math.min(12, 222, 891, 5, -22)); // takes as many number as we want, so not a set number of parameters
+// console.log(Math.max(12, 222, 891, 5, -22)); // same as Math.min, but maximum
 
-// Math.floor, Math.ceil
-console.log(Math.floor(999.999)); // rounds down your number- output: 999
-console.log(Math.ceil(999.001)); // rounds up your number- output: 1000
-console.log(parseInt(999.999)); // ignores any number after the decimal point
+// // Math.floor, Math.ceil
+// console.log(Math.floor(999.999)); // rounds down your number- output: 999
+// console.log(Math.ceil(999.001)); // rounds up your number- output: 1000
+// console.log(parseInt(999.999)); // ignores any number after the decimal point
 
+////////////////////////////////////////////////////////////////////////////////////////////
 
+// 5.24 Basic Array Methods
+
+const nums = [1,2,3];
+
+// concat
+const numsTwo = [4,5,6];
+console.log(nums.concat(numsTwo));
+// you can also concat numsTwo TWICE  to an array: this is called 'method chaining'
+console.log(nums.concat(numsTwo).concat(numsTwo)); //output: [1,2,3,4,5,6,4,5,6]
+
+// slice
+console.log(nums.slice(1)); // slices off the first index
+console.log(nums.slice(0,2)); // second index is up to, but not including, so the 3 is not included
+console.log(nums.slice(-2)); // negative indices also work- output: [2,3]
+
+// pop, push (add, remove from end)
+let num = nums.pop(); // removes the last elemen of the array nums, and stores that value into num
+nums.pop(); // removes last element of the array, but that value is not stored in a variable
+console.log(nums, num); 
+nums.push(2);
+nums.push(num);
+console.log(nums); // we have original nums array [1,2,3] again
+
+// shift, unshift (add, remove from beginning)
+num = nums.shift();
+nums.shift();
+console.log(nums, num); // nums = [3] and num = 1
+nums.unshift(2);
+nums.unshift(num);
+console.log(nums);
+
+// splice
+// unlike slice, splice will not return a copy after slicing out elements of an array, it's doing it to the original array
+// const deleted = nums.splice(1,1,4); // removed elements are stored into splice as an array
+// console.log(deleted); 
+// console.log(nums);
+// splice(index, numberOfElementsToDelete [after initial index], replacement)
+const deleted = nums.splice(1,2,3,4,5,6,7,8,9); // everything after the first 2 numbers is added into the array in that position (multiple element)
+console.log(deleted); // output: [2,3]
+console.log(nums);
 
 
 
