@@ -1278,12 +1278,12 @@
         >> these should return: "5", "12", "617"
 */
 
-const divideTwo = function(num) {
-  const dividedNum = num / 2;
-  return Math.floor(dividedNum);
-}
+// const divideTwo = function(num) {
+//   const dividedNum = num / 2;
+//   return Math.floor(dividedNum);
+// }
 
-console.log(divideTwo(1235));
+// console.log(divideTwo(1235));
 
 /*
     ☑️ now, create a function expression that 
@@ -1296,12 +1296,12 @@ console.log(divideTwo(1235));
         >> these should return "Hello", "World", "I love javascript"
 */
 
-const makeUpper = function(word) {
-  let firstUpper = word[0].toUpperCase() + word.slice(1);
-  return firstUpper;
-}
+// const makeUpper = function(word) {
+//   let firstUpper = word[0].toUpperCase() + word.slice(1);
+//   return firstUpper;
+// }
 
-console.log(makeUpper('i love javascript'));
+// console.log(makeUpper('i love javascript'));
 
 /*
     ☑️ Now, let's get some practice with the string methods
@@ -1317,14 +1317,14 @@ console.log(makeUpper('i love javascript'));
         >> "split" the words apart into an array (should return ["i", "love", "javascript"])
 */
 
-const string = 'i love javascript';
+// const string = 'i love javascript';
 
-console.log(string.indexOf('j'));
-console.log(string.indexOf('z'));
-console.log(string.slice(7));
-console.log(string.slice(2,6));
-console.log(string.replace("javascript", "HTML"));
-console.log(string.split(" "));
+// console.log(string.indexOf('j'));
+// console.log(string.indexOf('z'));
+// console.log(string.slice(7));
+// console.log(string.slice(2,6));
+// console.log(string.replace("javascript", "HTML"));
+// console.log(string.split(" "));
 
 
 /*
@@ -1335,12 +1335,12 @@ console.log(string.split(" "));
         >> Use Math.max to compare your age with my age (28)
 */
 
-let num = 1000;
+// let num = 1000;
 
-let numFinal = num.toFixed(2).toString();
-console.log('$' + numFinal);
+// let numFinal = num.toFixed(2).toString();
+// console.log('$' + numFinal);
 
-console.log(Math.max('26','28'));
+// console.log(Math.max('26','28'));
 
 /*
     ☑️ let's get some practice with the array methods
@@ -1356,13 +1356,13 @@ console.log(Math.max('26','28'));
 
 */
 
-let arr = [1,2,3,4];
+// let arr = [1,2,3,4];
 
-console.log(arr.slice(-2));
-arr.push(5,6);
-console.log(arr);
-arr.splice(3,2);
-console.log(arr);
+// console.log(arr.slice(-2));
+// arr.push(5,6);
+// console.log(arr);
+// arr.splice(3,2);
+// console.log(arr);
 
 /*
     CHAINING
@@ -1394,10 +1394,10 @@ console.log(arr);
         cool, right?
 */
 
-var alphabet = 'abc';
+// var alphabet = 'abc';
 
-let char = alphabet.split("").reverse().join("");
-console.log(char);
+// let char = alphabet.split("").reverse().join("");
+// console.log(char);
 
 /*
     ☑️ ok, now it's your turn (for real this time)
@@ -1409,10 +1409,10 @@ console.log(char);
         >> Finally, let's use DIRECT INDEXING to just get the cents (ex. "00")
 */
 
-let myNumber = 100;
+// let myNumber = 100;
 
-let finalNum = myNumber.toFixed(2).split(".")[1] + ' cents';
-console.log(finalNum);
+// let finalNum = myNumber.toFixed(2).split(".")[1] + ' cents';
+// console.log(finalNum);
 
 /*
     ☑️ one more, create a string, var coachName = "jan frey"...
@@ -1423,10 +1423,41 @@ console.log(finalNum);
         >> And finally, wrap the whole thing in a console.log!
 */
 
-var coachName = "jan frey";
+// var coachName = "jan frey";
 
-console.log(coachName.split(" ")[1][0].toUpperCase().concat(' is the last initial'));
+// console.log(coachName.split(" ")[1][0].toUpperCase().concat(' is the last initial'));
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.25 Arrow Functions
+
+// const addTwo = function(num) {
+//     return num + 2;
+// }
+
+// the arrow function setup of the above function expression:
+// const addTwo = (num) => { 
+//     return num + 2;
+// }
+// if there is only 1 parameter, you can remove the parentheses
+// const addTwo = num => {
+//     return num + 2;
+// }
+// you can also removed the {} and the return: (but the {} and return need to be together)
+// const addTwo = num => num + 2;
+
+const addBothNums = (first, second) => first + second;
+
+console.log(addBothNums(1,2));
+
+const doubleUntilOver1000 = function(num) {
+    while (num < 1000) {
+        num*=2;
+    }
+    return num;
+}
+
+console.log(doubleUntilOver1000(50));
 
 
 
