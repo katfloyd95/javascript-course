@@ -1208,44 +1208,225 @@
 
 // 5.24 Basic Array Methods
 
-const nums = [1,2,3];
+// const nums = [1,2,3];
 
-// concat
-const numsTwo = [4,5,6];
-console.log(nums.concat(numsTwo));
-// you can also concat numsTwo TWICE  to an array: this is called 'method chaining'
-console.log(nums.concat(numsTwo).concat(numsTwo)); //output: [1,2,3,4,5,6,4,5,6]
+// // concat
+// const numsTwo = [4,5,6];
+// console.log(nums.concat(numsTwo));
+// // you can also concat numsTwo TWICE  to an array: this is called 'method chaining'
+// console.log(nums.concat(numsTwo).concat(numsTwo)); //output: [1,2,3,4,5,6,4,5,6]
 
-// slice
-console.log(nums.slice(1)); // slices off the first index
-console.log(nums.slice(0,2)); // second index is up to, but not including, so the 3 is not included
-console.log(nums.slice(-2)); // negative indices also work- output: [2,3]
+// // slice
+// console.log(nums.slice(1)); // slices off the first index
+// console.log(nums.slice(0,2)); // second index is up to, but not including, so the 3 is not included
+// console.log(nums.slice(-2)); // negative indices also work- output: [2,3]
 
-// pop, push (add, remove from end)
-let num = nums.pop(); // removes the last elemen of the array nums, and stores that value into num
-nums.pop(); // removes last element of the array, but that value is not stored in a variable
-console.log(nums, num); 
-nums.push(2);
-nums.push(num);
-console.log(nums); // we have original nums array [1,2,3] again
+// // pop, push (add, remove from end)
+// let num = nums.pop(); // removes the last elemen of the array nums, and stores that value into num
+// nums.pop(); // removes last element of the array, but that value is not stored in a variable
+// console.log(nums, num); 
+// nums.push(2);
+// nums.push(num);
+// console.log(nums); // we have original nums array [1,2,3] again
 
-// shift, unshift (add, remove from beginning)
-num = nums.shift();
-nums.shift();
-console.log(nums, num); // nums = [3] and num = 1
-nums.unshift(2);
-nums.unshift(num);
-console.log(nums);
-
-// splice
-// unlike slice, splice will not return a copy after slicing out elements of an array, it's doing it to the original array
-// const deleted = nums.splice(1,1,4); // removed elements are stored into splice as an array
-// console.log(deleted); 
+// // shift, unshift (add, remove from beginning)
+// num = nums.shift();
+// nums.shift();
+// console.log(nums, num); // nums = [3] and num = 1
+// nums.unshift(2);
+// nums.unshift(num);
 // console.log(nums);
-// splice(index, numberOfElementsToDelete [after initial index], replacement)
-const deleted = nums.splice(1,2,3,4,5,6,7,8,9); // everything after the first 2 numbers is added into the array in that position (multiple element)
-console.log(deleted); // output: [2,3]
-console.log(nums);
+
+// // splice
+// // unlike slice, splice will not return a copy after slicing out elements of an array, it's doing it to the original array
+// // const deleted = nums.splice(1,1,4); // removed elements are stored into splice as an array
+// // console.log(deleted); 
+// // console.log(nums);
+// // splice(index, numberOfElementsToDelete [after initial index], replacement)
+// const deleted = nums.splice(1,2,3,4,5,6,7,8,9); // everything after the first 2 numbers is added into the array in that position (multiple element)
+// console.log(deleted); // output: [2,3]
+// console.log(nums);
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+  JS Practice 5
+  
+    This will be the hardest practice yet, so get ready!
+
+    We'll practice using common methods, then creating our own functions
+
+    To test a given function or method, 
+    you can put it inside a console log, like so.
+        >> console.log(addTwo(2));
+        >> 4
+
+    or like so with your "expected" value of 4
+        >> console.log(addTwo(2) === 4)
+        >> true
+    this also known as a test :)
+*/
+
+
+/*
+    ☑️ Cool, let's create our own functions, first create a function definition that...
+        >> 1. takes a number, "num" as an argument
+        >> 2. divides num by 2
+        >> 3. (don't forget to return!)
+    ☑️ then, add some code to your function that rounds the number DOWN
+    ☑️ finally, call your function with the values: 10, 25, 1235
+        >> these should return: "5", "12", "617"
+*/
+
+const divideTwo = function(num) {
+  const dividedNum = num / 2;
+  return Math.floor(dividedNum);
+}
+
+console.log(divideTwo(1235));
+
+/*
+    ☑️ now, create a function expression that 
+        >> 1. takes a string as an argument
+        >> 2. takes the first character "upper cases" it, and returns it
+        >> 3. HINT: use direct indexing to get a single character from a string
+    ☑️ call your function with the values: "hello", "world", "i love javascript"
+        >> these should return "H", "W", "I"
+    ☑️ BONUS: change your fn to return the original string capitalized
+        >> these should return "Hello", "World", "I love javascript"
+*/
+
+const makeUpper = function(word) {
+  let firstUpper = word[0].toUpperCase() + word.slice(1);
+  return firstUpper;
+}
+
+console.log(makeUpper('i love javascript'));
+
+/*
+    ☑️ Now, let's get some practice with the string methods
+    ☑️ given the string "i love javascript"...
+        >> get the "indexOf" the "j" character (should return 7)
+        >> get the "indexOf" the "z" character (should return -1)
+
+        >> get a "slice" of just the word "javascript"
+        >> get a "slice" of just the word "love"
+
+        >> "replace" the word "javascript" with "HTML"
+
+        >> "split" the words apart into an array (should return ["i", "love", "javascript"])
+*/
+
+const string = 'i love javascript';
+
+console.log(string.indexOf('j'));
+console.log(string.indexOf('z'));
+console.log(string.slice(7));
+console.log(string.slice(2,6));
+console.log(string.replace("javascript", "HTML"));
+console.log(string.split(" "));
+
+
+/*
+    ☑️ let's get some practice with the number methods
+    ☑️ given the number 1000
+        >> Convert it to a string with a "fixed" 2 decimal places
+        >> add a dollar sign to the front of this string
+        >> Use Math.max to compare your age with my age (28)
+*/
+
+let num = 1000;
+
+let numFinal = num.toFixed(2).toString();
+console.log('$' + numFinal);
+
+console.log(Math.max('26','28'));
+
+/*
+    ☑️ let's get some practice with the array methods
+    ☑️ given the array [ 1, 2, 3, 4 ]
+        >> Let's "slice" it to just get the last 2 numbers 
+            (remember, it does not modify the array, but makes a copy)
+
+        >> Now, let's "push" numbers 5 and 6 into our array
+            ( the Array should now be [1, 2, 3, 4, 5, 6] )
+
+        >> Let's "SPLICE" it to now remove the 4 and 5 
+            (remember, this DOES modify the array "in place")
+
+*/
+
+let arr = [1,2,3,4];
+
+console.log(arr.slice(-2));
+arr.push(5,6);
+console.log(arr);
+arr.splice(3,2);
+console.log(arr);
+
+/*
+    CHAINING
+
+    A common pattern is to chain multiple methods together
+    They get "evaluated" from left to right, so...
+
+    var name = "Igor Z";
+
+    name.toUpperCase().split(' '); 
+        >> would work! 
+        >> toUpperCase goes first, so we get: "IGOR Z".split(' '), and finally ['IGOR', 'Z']
+        >> in other words, we use 2 string methods in a row
+
+    name.split(' ').toUpperCase();
+        >> would NOT work
+        >> split goes first, so we get ["Igor", "Z"].toUpperCase(), which causes an error
+        >> we cannot use .toUpperCase, a string method, on an array
+
+    ☑️ a common pattern is chaining "split" and "join" together
+        this allows us to use array methods on strings, and then convert them back
+
+        write the following out to see for yourself
+        >> create a string, var alphabet = "abc"
+        >> ".split" this string with the "" (empty space) char as an argument
+        >> attach the ".reverse()" method to the end
+        >> now ".join" this array with the "" (empty space) char as an argument
+
+        cool, right?
+*/
+
+var alphabet = 'abc';
+
+let char = alphabet.split("").reverse().join("");
+console.log(char);
+
+/*
+    ☑️ ok, now it's your turn (for real this time)
+        Chain these steps into a single line! (Don't use intermediary variables)
+
+    ☑️ create a number, var myNumber = 100...
+        >> Let's convert it to a "fixed" 2 decimcal places (ex. "100.00")
+        >> Then let's "split" it at "." to get dollars and cents
+        >> Finally, let's use DIRECT INDEXING to just get the cents (ex. "00")
+*/
+
+let myNumber = 100;
+
+let finalNum = myNumber.toFixed(2).split(".")[1] + ' cents';
+console.log(finalNum);
+
+/*
+    ☑️ one more, create a string, var coachName = "jan frey"...
+        >> Let's split the words apart
+        >> Then JUST get the last name initial (hint: direct indexing 2x)
+        >> Convert the "f" to upper case
+        >> Concat it, to create a string that says "F is the last initial"
+        >> And finally, wrap the whole thing in a console.log!
+*/
+
+var coachName = "jan frey";
+
+console.log(coachName.split(" ")[1][0].toUpperCase().concat(' is the last initial'));
+
 
 
 
