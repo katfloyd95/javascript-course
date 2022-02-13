@@ -1446,18 +1446,63 @@
 // you can also removed the {} and the return: (but the {} and return need to be together)
 // const addTwo = num => num + 2;
 
-const addBothNums = (first, second) => first + second;
+// const addBothNums = (first, second) => first + second;
 
-console.log(addBothNums(1,2));
+// console.log(addBothNums(1,2));
 
-const doubleUntilOver1000 = function(num) {
-    while (num < 1000) {
-        num*=2;
-    }
-    return num;
+// const doubleUntilOver1000 = function(num) {
+//     while (num < 1000) {
+//         num*=2;
+//     }
+//     return num;
+// }
+
+// console.log(doubleUntilOver1000(50));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// 5.26 Find, Some, Every (Higher Order Array Methods)
+
+const nums = [1,2,3];
+
+// find (put an arrow function inside)
+const found  = nums.find(item => {
+    console.log(item, 'ran function');
+    })
+
+// it's exactly the same as this 'for of' loop:
+for (let num of nums) {
+    console.log(num, 'ran function');
 }
 
-console.log(doubleUntilOver1000(50));
+// another example for find:
+const found1 = nums.find(num => {
+    if (num > 2) {
+        return true;
+    }
+});
+
+console.log(found1); // output is 3
+
+// some (at least one value has to be true)
+const ages = [12,21,13,42,50];
+
+const hasMinors = ages.some(age => {
+    if (age < 18) {
+        return true;
+    }
+})
+
+console.log(hasMinors);
+
+// every (every value has to be true)
+const allOver18 = ages.every(age => {
+    if (age > 18) {
+        return true;
+    }
+})
+
+console.log(allOver18);
 
 
 
