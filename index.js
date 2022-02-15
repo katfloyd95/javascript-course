@@ -1596,19 +1596,214 @@
 
 // 5.29 Reduce
 
-const ages = [21,42,50,18];
+// const ages = [21,42,50,18];
 
-// reduce
-const result = ages.reduce((sum, age) => {
-    console.log(sum, age); // outputs: 21 42, 63(total from prev iteration) 50, 113 18
-    const total = sum + age;
-    console.log(total); // output: 63, 113, 131
-    return total;
+// // reduce
+// const result = ages.reduce((sum, age) => {
+//     console.log(sum, age); // outputs: 21 42, 63(total from prev iteration) 50, 113 18
+//     const total = sum + age;
+//     console.log(total); // output: 63, 113, 131
+//     return total;
+// })
+
+// console.log(result); // output: 131 (final total)
+
+// // this can also be simply written as"
+// const simpleResult = ages.reduce((sum, age) => sum + age);
+
+// console.log(simpleResult); // output: 131
+
+/*
+ JS Practice 6
+*/
+
+/*
+    Let's practice "higher order" array methods.
+    (Using arrow functions is optional)
+
+    Remember, To test a given function or method, 
+    you can put it inside a console log, like so.
+        >> console.log(addTwo(2));
+        >> 4
+
+    or like so with your "expected" value of 4
+        >> console.log(addTwo(2) === 4)
+        >> true
+    this also known as a test :)
+*/
+
+var nums = [1, 2, 3, 4];
+
+/*
+    SOME and EVERY
+    ☑️ write some code to check if "every" number in nums is positive
+    ☑️ write some code to check if any / "some" numbers in nums are greater than 3
+*/
+
+const isPositive = nums.every(num => {
+    if (num > 0) {
+        return true;
+    } else {
+        return false;
+    }
 })
 
-console.log(result); // output: 131 (final total)
+console.log(isPositive);
 
-// this can also be simply written as"
-const simpleResult = ages.reduce((sum, age) => sum + age);
+// another way to write this:
+var allPositive = nums.every(function(num) {
+    console.log(num);
+    return num > 0;
+})
 
-console.log(simpleResult); // output: 131
+const overThree = nums.some(num => {
+    if (num > 3) {
+        return true;
+    } else {
+        return false;
+    }
+})
+
+console.log(overThree);
+
+// another way to write this:
+var someNums = nums.some(function(num) {
+    var isGreaterThan3 = num > 3;
+    console.log(num, isGreaterThan3); // 1 false, 2 false, 3 false, 4 true
+    return isGreaterThan3;
+})
+
+/*
+    FOR EACH number in nums
+    ☑️ print out each number one at a time (use forEach, not a loop)
+    ☑️ print strings formatted like so ("1 sheep", "2 sheep", "3 sheep"...) to the console
+*/
+
+nums.forEach(age => {
+    const sheepNum = age + ` sheep`;
+    console.log(sheepNum);
+});
+
+/*
+    MAP is arguably the most commonly used higher order method
+    ☑️ write some code that creates a new array, where double every number in nums is doubled
+    ☑️ write some code that creates a new array, where each number is replaced by a dollar amount
+        (ex ['$1.00', '$2.00', ...])
+    ☑️ write some code that creates a new array, where each number is replaced by a boolean
+        indicating whether it is positive or not
+        (ex. [true, true, ...])
+*/
+
+const doubleNum = nums.map(num => {
+    return num * 2;
+});
+
+console.log(doubleNum);
+
+const dollarAmount = nums.map(num => {
+    return `$` + num.toFixed(2);
+});
+
+console.log(dollarAmount);
+
+const positiveBoolean = nums.map(num => {
+    return num > 0;
+})
+
+console.log(positiveBoolean);
+
+/*
+    Let's FILTER things down
+    ☑️ write some code that creates a filtered array where only the negative numbers remain
+        (should be an empty array...)
+    ☑️ write some code that creates a filtered array where only even numbers remain
+        (HINT: %)
+*/
+
+const negativeNums = nums.filter(num => {
+    if (num < 0) {
+        return true;
+    } else {
+        return false;
+    }
+}) 
+
+console.log(negativeNums);
+
+// can also be written as:
+var onlyNegative = nums.filter(function(num) {
+    return num < 0;
+})
+
+console.log(onlyNegative);
+
+
+
+const evenNums = nums.filter(num => {
+    if (num % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+})
+
+console.log(evenNums);
+
+var onlyEven = nums.filter(function(num) {
+    return num % 2 == 0;
+})
+
+console.log(onlyEven)
+
+/*
+    REDUCE the complexity (warning: challenging)
+    ☑️ A common use case for reduce is adding all the numbers in an array together
+        can you get that sum with reduce, for this array? (result should be 10)
+    ☑️ Still too easy for you? Ok.
+        Try creating a single "sheep" string from all the numbers, using reduce
+        result should be ("1 sheep, 2 sheep, 3 sheep...")
+        (Feel free to use Google, & don't worry if you can't get this! It's very challenging)
+*/
+
+const sumOfNums = nums.reduce((sum, num) => {
+    console.log(sum, num);
+    const total = sum + num;
+    console.log(total);
+    return total; // in order to get total, you NEED to have it returned
+});
+
+console.log(sumOfNums);
+
+const sheepString = nums.reduce(function(str, num) {
+    return str + num + ` sheep, `;
+}, '') 
+// this second empty string argument is replacing str in the first argument, so that only the num and the sheep string have values
+
+console.log(sheepString.slice(0,-2)); // the slice removed the last comma
+
+/*
+    HIGHER ORDER CHAINING
+
+    Method chaining is still scary? It's about to get scarier.
+    Just kidding (kind of)
+
+    Remember, don't use intermediary variables
+
+    ☑️ Let's chain split, filter, and join
+        >> 1. Create a string variable -- var coach = "aaron"
+        >> 2. SPLIT the "coach" variable using "" (empty space)
+        >> 3. FILTER out the "a" characters
+        >> 4. JOIN the result back into a string, using "" (empty space)
+
+    ☑️ Let's chain together map and reduce on "nums"
+        >> 1. MAP nums to create a new array, with triple each number
+        >> 2. REDUCE to add the numbers (re use your reduce code here)
+*/
+
+var coach = 'aaron';
+
+console.log(coach.split("").filter(char => char != 'a').join(""));
+
+const numsTripled = nums.map(num => num * 3).reduce((sum, num) => sum + num);
+
+console.log(numsTripled);
