@@ -1506,61 +1506,92 @@
 
 // 5.27 ForEach, Map
 
+// const ages = [21,42,50,18];
+
+// let highestAge = 0;
+
+// // forEach (no stored constant variable)
+// ages.forEach(age => {
+//     console.log(age);
+//     if (age > highestAge) {
+//         highestAge = age;
+//     }
+// })
+
+// console.log(highestAge); // output: 50
+
+// // only useful for console logging and modifying an external variable
+
+// // you can also add extra parameters: example.forEach(value, index, array):
+// ages.forEach((age, index, arr) => {
+//     console.log(age, index, arr); // outputs: 21 0 [21,42,50,18] ...
+// })
+
+// // you can also use arr with arr[index] to select the index of the array
+
+// // map (MOST USEFUL of all higher order array functions)
+// const newAges = ages.map(age => {
+//     console.log(age);
+//     // return age; // need to have the returning of the variable to get the new array for newAges
+//     // return 11; // newAges = [11,11,11,11]
+//     return 12; // newAges = [12,12,12,12]
+// })
+
+// console.log(newAges); // without the return line, this is [undefined, undefined, undefined, undefined]
+
+// // map allows us to modify our items with new values
+
+// const newAges = ages.map(age => {
+//     return age / 2;
+// })
+
+// // or written as so:
+// const newAge = ages.map(age => age / 2);
+
+// console.log(newAges); 
+
+// const ageRange = ages.map(age => {
+//     if (age > 40) {
+//         return `boomer`;
+//     } else {
+//         return `zoomer`;
+//     }
+// })
+
+// console.log(ageRange);
+
+// 5.28 Filter, sort
+
 const ages = [21,42,50,18];
 
-let highestAge = 0;
-
-// forEach (no stored constant variable)
-ages.forEach(age => {
-    console.log(age);
-    if (age > highestAge) {
-        highestAge = age;
-    }
-})
-
-console.log(highestAge); // output: 50
-
-// only useful for console logging and modifying an external variable
-
-// you can also add extra parameters: example.forEach(value, index, array):
-ages.forEach((age, index, arr) => {
-    console.log(age, index, arr); // outputs: 21 0 [21,42,50,18] ...
-})
-
-// you can also use arr with arr[index] to select the index of the array
-
-// map (MOST USEFUL of all higher order array functions)
-const newAges = ages.map(age => {
-    console.log(age);
-    // return age; // need to have the returning of the variable to get the new array for newAges
-    // return 11; // newAges = [11,11,11,11]
-    return 12; // newAges = [12,12,12,12]
-})
-
-console.log(newAges); // without the return line, this is [undefined, undefined, undefined, undefined]
-
-// map allows us to modify our items with new values
-
-const newAges = ages.map(age => {
-    return age / 2;
-})
-
-// or written as so:
-const newAge = ages.map(age => age / 2);
-
-console.log(newAges); 
-
-const ageRange = ages.map(age => {
+// filter (this function only looks for a true, false, truthy, or falsey value to be returned)
+const boomers = ages.filter(age => {
+    // return false; // returns empty array
     if (age > 40) {
-        return `boomer`;
+        return true;
     } else {
-        return `zoomer`;
+        return false;
     }
 })
 
-console.log(ageRange);
+const zoomers = ages.filter(age => {
+    // return false; // returns empty array
+    if (age < 40) {
+        return true;
+    } else {
+        return false;
+    }
+})
 
+console.log(boomers, zoomers); // outputs two separate arrays
 
+// sort (the other higher order array functions make a copy, but sort operates in places)
+ages.sort(); // the default of this array function sorts in an ascending order
+console.log(ages); // outputs [18,21,42,50]
 
+// also sorts in alphabetical order:
+const names = ['Kat', 'Alex', 'Mom', 'Dad'];
+names.sort();
+console.log(names);
 
 
