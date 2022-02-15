@@ -1562,36 +1562,53 @@
 
 // 5.28 Filter, sort
 
+// const ages = [21,42,50,18];
+
+// // filter (this function only looks for a true, false, truthy, or falsey value to be returned)
+// const boomers = ages.filter(age => {
+//     // return false; // returns empty array
+//     if (age > 40) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// })
+
+// const zoomers = ages.filter(age => {
+//     // return false; // returns empty array
+//     if (age < 40) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// })
+
+// console.log(boomers, zoomers); // outputs two separate arrays
+
+// // sort (the other higher order array functions make a copy, but sort operates in places)
+// ages.sort(); // the default of this array function sorts in an ascending order
+// console.log(ages); // outputs [18,21,42,50]
+
+// // also sorts in alphabetical order:
+// const names = ['Kat', 'Alex', 'Mom', 'Dad'];
+// names.sort();
+// console.log(names);
+
+// 5.29 Reduce
+
 const ages = [21,42,50,18];
 
-// filter (this function only looks for a true, false, truthy, or falsey value to be returned)
-const boomers = ages.filter(age => {
-    // return false; // returns empty array
-    if (age > 40) {
-        return true;
-    } else {
-        return false;
-    }
+// reduce
+const result = ages.reduce((sum, age) => {
+    console.log(sum, age); // outputs: 21 42, 63(total from prev iteration) 50, 113 18
+    const total = sum + age;
+    console.log(total); // output: 63, 113, 131
+    return total;
 })
 
-const zoomers = ages.filter(age => {
-    // return false; // returns empty array
-    if (age < 40) {
-        return true;
-    } else {
-        return false;
-    }
-})
+console.log(result); // output: 131 (final total)
 
-console.log(boomers, zoomers); // outputs two separate arrays
+// this can also be simply written as"
+const simpleResult = ages.reduce((sum, age) => sum + age);
 
-// sort (the other higher order array functions make a copy, but sort operates in places)
-ages.sort(); // the default of this array function sorts in an ascending order
-console.log(ages); // outputs [18,21,42,50]
-
-// also sorts in alphabetical order:
-const names = ['Kat', 'Alex', 'Mom', 'Dad'];
-names.sort();
-console.log(names);
-
-
+console.log(simpleResult); // output: 131
