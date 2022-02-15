@@ -1463,50 +1463,102 @@
 
 // 5.26 Find, Some, Every (Higher Order Array Methods)
 
-const nums = [1,2,3];
+// const nums = [1,2,3];
 
-// find (put an arrow function inside)
-const found  = nums.find(item => {
-    console.log(item, 'ran function');
-    })
+// // find (put an arrow function inside)
+// const found  = nums.find(item => {
+//     console.log(item, 'ran function');
+//     })
 
-// it's exactly the same as this 'for of' loop:
-for (let num of nums) {
-    console.log(num, 'ran function');
-}
+// // it's exactly the same as this 'for of' loop:
+// for (let num of nums) {
+//     console.log(num, 'ran function');
+// }
 
-// another example for find:
-const found1 = nums.find(num => {
-    if (num > 2) {
-        return true;
-    }
-});
+// // another example for find:
+// const found1 = nums.find(num => {
+//     if (num > 2) {
+//         return true;
+//     }
+// });
 
-console.log(found1); // output is 3
+// console.log(found1); // output is 3
 
-// some (at least one value has to be true)
-const ages = [12,21,13,42,50];
+// // some (at least one value has to be true)
+// const ages = [12,21,13,42,50];
 
-const hasMinors = ages.some(age => {
-    if (age < 18) {
-        return true;
+// const hasMinors = ages.some(age => {
+//     if (age < 18) {
+//         return true;
+//     }
+// })
+
+// console.log(hasMinors);
+
+// // every (every value has to be true)
+// const allOver18 = ages.every(age => {
+//     if (age > 18) {
+//         return true;
+//     }
+// })
+
+// console.log(allOver18);
+
+// 5.27 ForEach, Map
+
+const ages = [21,42,50,18];
+
+let highestAge = 0;
+
+// forEach (no stored constant variable)
+ages.forEach(age => {
+    console.log(age);
+    if (age > highestAge) {
+        highestAge = age;
     }
 })
 
-console.log(hasMinors);
+console.log(highestAge); // output: 50
 
-// every (every value has to be true)
-const allOver18 = ages.every(age => {
-    if (age > 18) {
-        return true;
+// only useful for console logging and modifying an external variable
+
+// you can also add extra parameters: example.forEach(value, index, array):
+ages.forEach((age, index, arr) => {
+    console.log(age, index, arr); // outputs: 21 0 [21,42,50,18] ...
+})
+
+// you can also use arr with arr[index] to select the index of the array
+
+// map (MOST USEFUL of all higher order array functions)
+const newAges = ages.map(age => {
+    console.log(age);
+    // return age; // need to have the returning of the variable to get the new array for newAges
+    // return 11; // newAges = [11,11,11,11]
+    return 12; // newAges = [12,12,12,12]
+})
+
+console.log(newAges); // without the return line, this is [undefined, undefined, undefined, undefined]
+
+// map allows us to modify our items with new values
+
+const newAges = ages.map(age => {
+    return age / 2;
+})
+
+// or written as so:
+const newAge = ages.map(age => age / 2);
+
+console.log(newAges); 
+
+const ageRange = ages.map(age => {
+    if (age > 40) {
+        return `boomer`;
+    } else {
+        return `zoomer`;
     }
 })
 
-console.log(allOver18);
-
-
-
-
+console.log(ageRange);
 
 
 
